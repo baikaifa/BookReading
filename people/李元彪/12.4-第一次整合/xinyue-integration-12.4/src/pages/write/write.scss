@@ -1,0 +1,49 @@
+page-write {
+    ion-content{
+        .fenlei{
+            p{
+                font-size: 16px;
+                margin: 5px;
+                span{
+                    color: red;
+                }
+            }
+        }
+        .miaoshu{
+            p{
+                font-size: 16px;
+                margin: 5px;
+                margin-top: 10px;
+                span{
+                    color: red;
+                }
+            }
+            textarea{
+                margin-top: 10px;
+                margin-left: 9%;
+            }
+        }
+        .lianxi{
+            p{
+                font-size: 16px;
+                margin: 5px;
+                margin-top: 10px;
+                input{
+                    font-size: 14px;
+                    height: 25px;
+                    border: 1px solid gray;
+                    margin-left: 20px;
+                }
+            }
+        }
+        button{
+            background-color: #32db64;
+            color: #fff;
+            font-size: 14px;
+            width: 90%;
+            margin-left: 5%;
+            height: 40px;
+            margin-top: 20px
+        }
+    }
+}
