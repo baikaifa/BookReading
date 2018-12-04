@@ -1,0 +1,31 @@
+<!--
+  Generated template for the XiaoxiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>xiaoxi</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content>
+  <div class="head">
+    <ion-icon  (click)="me()" name="ios-arrow-back"></ion-icon><span>我的消息</span>
+  </div>
+  <ul>
+    <li *ngFor="let item of arr;let idx=index;" (click)="isClick(idx)" [class.first]="isActive==idx">{{this.item}}</li>
+  </ul>
+  <div [ngSwitch]="isActive">
+    <div *ngSwitchCase="0">
+      <p>暂时没有消息0</p>
+    </div>
+    <div *ngSwitchCase="1">
+        <p>暂时没有消息1</p>
+    </div>
+  </div>
+</ion-content>
