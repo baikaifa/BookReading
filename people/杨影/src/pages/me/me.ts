@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
-import { QianbaoPage} from '../qianbao/qianbao'
-import { XiaoxiPage} from '../xiaoxi/xiaoxi'
+import { QianbaoPage} from '../../wode/qianbao/qianbao'
+import { XiaoxiPage} from '../../wode/xiaoxi/xiaoxi'
 /**
  * Generated class for the MePage page.
  *

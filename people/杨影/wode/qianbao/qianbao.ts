@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MePage} from '../me/me'
+
 /**
  * Generated class for the QianbaoPage page.
  *

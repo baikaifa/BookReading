@@ -17,10 +17,10 @@ import { ConfigProvider } from '../providers/config/config';
 import { HttpServicesProvider } from '../providers/http-services/http-services';
 import { StorageProvider } from '../providers/storage/storage';
 import { RegistersignPage } from '../pages/registersign/registersign';
-// 我的钱包页面
-import { QianbaoPage } from '../pages/qianbao/qianbao';
-//我的消息页面
-import { XiaoxiPage } from '../pages/xiaoxi/xiaoxi';
+//我的钱包页面
+import { QianbaoPage } from '../wode/qianbao/qianbao';
+//我的消息界面
+import { XiaoxiPage } from '../wode/xiaoxi/xiaoxi';
 
 @NgModule({
   declarations: [

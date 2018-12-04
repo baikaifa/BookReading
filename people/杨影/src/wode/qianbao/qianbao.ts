@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MePage} from '../me/me'
 
 /**
- * Generated class for the XiaoxiPage page.
+ * Generated class for the QianbaoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,23 +10,18 @@ import { MePage} from '../me/me'
 
 @IonicPage()
 @Component({
-  selector: 'page-xiaoxi',
-  templateUrl: 'xiaoxi.html',
+  selector: 'page-qianbao',
+  templateUrl: 'qianbao.html',
 })
-export class XiaoxiPage {
+export class QianbaoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
   me(){
     this.navCtrl.pop();
   }
-  isActive=0;
-  arr=['通知','评论'];
-  isClick(i){
-    this.isActive=i;
-  }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad XiaoxiPage');
+    console.log('ionViewDidLoad QianbaoPage');
   }
 
 }
