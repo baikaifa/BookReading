@@ -1,0 +1,142 @@
+page-originate {
+    .navList{
+        margin-top:3px;
+        button{
+            width: 100%; 
+            height: 30%;     
+            li{
+            height: 20%;
+            float: left;
+            width: 50%;
+            text-align: center;
+            list-style: none;
+            margin-left: -15px;
+            }
+            .first{
+                background-color: none;
+            }
+        }
+
+    }
+    #lbt{
+        display: block;
+        position: relative;
+        top:-10px;
+    }
+    #yctj>img{
+        height: 35px;
+        width: 25px;
+        margin-top: -15px;
+    }
+    #yctj>p{
+        display: block;
+        position: relative;
+        margin-left: 35px;
+        margin-top:-30px;
+    }
+    #noval>img{
+        height: 90px;
+        width: 20%;
+        float: left;
+        margin-left: 4%;
+    }
+
+    #noval>span{
+        text-align: center;
+        width: 20%;
+        float: left;
+        margin-left: 4%;
+    }
+    #gnHi>img{
+        height: 35px;
+        width: 25px;
+    }
+    #gnHi>p{
+        display: block;
+        position: relative;
+        margin-left: 35px;
+        margin-top:-30px;
+    }
+    #yjh{
+        height: 70px;
+        width: 340px;
+    }
+    #yjh>p{
+        text-indent: 10px;
+        display: block;
+        position: relative;
+        float: left;
+        width: 255px;
+    }
+    #yjh>img{
+        display: block;
+        position: relative;
+        height: 70px;
+        width: 70px;
+        float: left;
+    }
+    #sleep>p{
+        text-indent: 10px;
+        display: block;
+        position: relative;
+        float: left;
+        width: 255px;
+    }
+    #sleep>img{
+        display: block;
+        position: relative;
+        height: 70px;
+        width: 70px;
+        float: left;
+    }
+    #hhbd>p{
+        text-indent: 10px;
+        display: block;
+        position: relative;
+        float: left;
+        width: 255px;
+    }
+    #hhbd>img{
+        display: block;
+        position: relative;
+        height: 70px;
+        width: 70px;
+        float: left;
+    }
+    .dlxx{
+        span{
+            font-size: 17px;
+            margin-top: 5%;
+            margin-left: 7%;
+            float: left;
+            width: 100%;
+            height: 10%;
+        }
+    }
+    .zp>img{
+        height: 35px;
+        width: 25px;
+        margin-top: 15px;
+    }
+    .zp>span{
+        display: block;
+        position: relative;
+        margin-left: 35px;
+        margin-top:-30px;
+    }
+    #tg{
+        display: block;
+        float: right;
+        margin-top:-19px;
+        color:green;
+    }
+    .write{
+        img{
+            height: 50%;
+            width: 28%;
+            float: left;
+            margin-left: 5%;
+            margin-top:3%;
+        }
+    }
+}
