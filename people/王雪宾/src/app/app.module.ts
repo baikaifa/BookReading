@@ -1,3 +1,4 @@
+import { SearchPage } from './../pages/search/search';
 import { BookstorePage } from './../pages/bookstore/bookstore';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     BookstorePage,
     TabsPage,
+    SearchPage,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     BookstorePage,
     TabsPage,
+    SearchPage,
   ],
   providers: [
     StatusBar,
