@@ -1,0 +1,12 @@
+{
+  "name": "xinyueApp",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {},
+  "proxies": [
+    {
+      "path": "/web",
+      "proxyUrl": "http://127.0.0.1/phpResty/web"
+    }
+  ]
+}
