@@ -10,6 +10,26 @@
     <p class="p1">嗨~终于等到你</p>
     <p class="p2" (click)="qiandao()">签</p>
     <ion-icon (click)="sousuo()" class="icon1" name="md-search"></ion-icon>
+    <ion-icon class="icon2" name="md-more" (click)="isShow()"></ion-icon>
+    <div class="div" *ngIf="flag">
+      <ul>
+        <li>
+            <ion-icon name="ios-book-outline"></ion-icon><span>更新连载书</span>
+        </li>
+        <li>
+            <ion-icon name="ios-download-outline"></ion-icon><span>下载管理</span>
+        </li>
+        <li>
+            <ion-icon name="ios-log-in-outline"></ion-icon><span>本地导入</span>
+        </li>
+        <li>
+            <ion-icon name="ios-wifi-outline"></ion-icon><span>wifi传书</span>
+        </li>
+        <li>
+            <ion-icon name="ios-bookmarks-outline"></ion-icon><span>书籍管理</span>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="content">
     <ul>
