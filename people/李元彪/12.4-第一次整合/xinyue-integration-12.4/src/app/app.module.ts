@@ -8,19 +8,21 @@ import { OriginatePage } from '../pages/originate/originate';
 //王学宾
 import { BookstorePage } from '../pages/bookstore/bookstore';
 import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from '../pages/login/login';
-import { RegisterPage } from '../pages/register/register';
+import { LoginPage } from '../pages/me/login/login';
+import { QianbaoPage } from '../pages/me/qianbao/qianbao';
+import { XiaoxiPage } from '../pages/me/xiaoxi/xiaoxi';
+import { RegisterPage } from '../pages/me/register/register';
 import { MePage } from '../pages/me/me';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ConfigProvider } from '../providers/config/config';
 import { HttpServicesProvider } from '../providers/http-services/http-services';
 import { StorageProvider } from '../providers/storage/storage';
-import { RegistersignPage } from '../pages/registersign/registersign';
-import { IdeaPage } from '../pages/idea/idea';
-import { WritePage } from '../pages/write/write';
-import { LikePage } from '../pages/like/like';
-import { YueliPage } from '../pages/yueli/yueli';
+import { RegistersignPage } from '../pages/me/registersign/registersign';
+import { IdeaPage } from '../pages/me/idea/idea';
+import { WritePage } from '../pages/me/write/write';
+import { LikePage } from '../pages/me/like/like';
+import { YueliPage } from '../pages/me/yueli/yueli';
 @NgModule({
   declarations: [
     MyApp,
@@ -34,7 +36,9 @@ import { YueliPage } from '../pages/yueli/yueli';
     IdeaPage,
     WritePage,
     LikePage,
-    YueliPage
+    YueliPage,
+    QianbaoPage,
+    XiaoxiPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,9 @@ import { YueliPage } from '../pages/yueli/yueli';
     IdeaPage,
     WritePage,
     LikePage,
-    YueliPage
+    YueliPage,
+    QianbaoPage,
+    XiaoxiPage
   ],
   providers: [
     StatusBar,
