@@ -4,8 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 //自定义组件
 import { OriginatePage } from '../pages/originate/originate';
-
-//王学宾
+import { HomePage } from '../pages/home/home';
 import { BookstorePage } from '../pages/bookstore/bookstore';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/me/login/login';
@@ -23,6 +22,9 @@ import { IdeaPage } from '../pages/me/idea/idea';
 import { WritePage } from '../pages/me/write/write';
 import { LikePage } from '../pages/me/like/like';
 import { YueliPage } from '../pages/me/yueli/yueli';
+import { HttpClientModule } from '@angular/common/http';
+import { QiandaoPage } from '../shujia/qiandao/qiandao';//签到页面
+import { SousuoPage } from '../shujia/sousuo/sousuo';
 @NgModule({
   declarations: [
     MyApp,
@@ -38,11 +40,17 @@ import { YueliPage } from '../pages/me/yueli/yueli';
     LikePage,
     YueliPage,
     QianbaoPage,
-    XiaoxiPage
+    XiaoxiPage,
+    HomePage,
+    QiandaoPage,
+    SousuoPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      tabsHideOnSubPages:'true'
+    }),
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -59,7 +67,10 @@ import { YueliPage } from '../pages/me/yueli/yueli';
     LikePage,
     YueliPage,
     QianbaoPage,
-    XiaoxiPage
+    XiaoxiPage,
+    HomePage,
+    QiandaoPage,
+    SousuoPage
   ],
   providers: [
     StatusBar,
@@ -67,7 +78,8 @@ import { YueliPage } from '../pages/me/yueli/yueli';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ConfigProvider,
     HttpServicesProvider,
-    StorageProvider
+    StorageProvider,
+    HttpClientModule
   ]
 })
 export class AppModule {}
