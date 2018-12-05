@@ -14,7 +14,7 @@ page-bookstore {
       li{
         list-style-type:none;
         float: left;
-        margin-left: 11.5%;
+        margin-left: 11%;
         span{
           color:white;
           font-size:16px;
@@ -51,5 +51,17 @@ page-bookstore {
       }
     }
   }
-
+  #end-manhua{
+    margin-top: 3%;
+    img{
+      margin-left: 3.5%;
+      margin-top: 2%;
+    }
+  div{
+    img{
+      width: 28%;
+      margin-left: 3.5%;
+    }
+  }
+  }
 }

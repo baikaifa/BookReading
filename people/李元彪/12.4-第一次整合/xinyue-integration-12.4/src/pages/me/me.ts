@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LoginPage } from '../login/login';
-import { IdeaPage } from '../idea/idea';
-import { LikePage } from '../like/like';
-import { YueliPage } from '../yueli/yueli';
+import { LoginPage } from './login/login';
+import { IdeaPage } from './idea/idea';
+import { LikePage } from './like/like';
+import { YueliPage } from './yueli/yueli';
+import { QianbaoPage} from './qianbao/qianbao'
+import { XiaoxiPage} from './xiaoxi/xiaoxi'
 
 /**
  * Generated class for the MePage page.
@@ -34,7 +36,12 @@ public LoginPage=LoginPage;
     this.navCtrl.push(LikePage);
   }
   //跳转我的阅历页
-  goYueli() {
-    this.navCtrl.push(YueliPage);
+  goxiaoxi() {
+    this.navCtrl.push(XiaoxiPage);
   }
+
+  goqianbao() {
+    this.navCtrl.push(QianbaoPage);
+  }
+
 }

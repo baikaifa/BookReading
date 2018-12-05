@@ -5,7 +5,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 //自定义组件
 import { AboutPage } from '../pages/about/about';
-
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
@@ -17,10 +16,11 @@ import { ConfigProvider } from '../providers/config/config';
 import { HttpServicesProvider } from '../providers/http-services/http-services';
 import { StorageProvider } from '../providers/storage/storage';
 import { RegistersignPage } from '../pages/registersign/registersign';
-//我的钱包页面
-import { QianbaoPage } from '../wode/qianbao/qianbao';
-//我的消息界面
-import { XiaoxiPage } from '../wode/xiaoxi/xiaoxi';
+import { QianbaoPage } from '../wode/qianbao/qianbao';//我的钱包页面
+import { XiaoxiPage } from '../wode/xiaoxi/xiaoxi';//我的消息界面
+import { QiandaoPage } from '../shujia/qiandao/qiandao';//签到页面
+import { SousuoPage } from '../shujia/sousuo/sousuo';//搜索页面
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,13 +33,17 @@ import { XiaoxiPage } from '../wode/xiaoxi/xiaoxi';
     RegisterPage,
     RegistersignPage,
     QianbaoPage,
-    XiaoxiPage
+    XiaoxiPage,
+    QiandaoPage,
+    SousuoPage
   ],
   imports: [
     BrowserModule,
+    
     IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages:'true'
-    })
+    }),
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -52,7 +56,9 @@ import { XiaoxiPage } from '../wode/xiaoxi/xiaoxi';
     RegisterPage,
     RegistersignPage,
     QianbaoPage,
-    XiaoxiPage
+    XiaoxiPage,
+    QiandaoPage,
+    SousuoPage
   ],
   providers: [
     StatusBar,

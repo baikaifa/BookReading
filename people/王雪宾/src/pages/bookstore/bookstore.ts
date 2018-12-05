@@ -1,3 +1,4 @@
+import { SearchPage } from './../search/search';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -7,6 +8,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'bookstore.html'
 })
 export class BookstorePage {
+  SearchPage;
   // @ViewChild('ac') ac;
   icons:string="camera";
   items = [];
@@ -16,6 +18,11 @@ export class BookstorePage {
   }
   arr=['精选','女生','男生','漫画'];
   constructor(public navCtrl: NavController) {
+    this.SearchPage = SearchPage;
+  }
+  gosearch(){
+    //跳转到指定页面
+    this.navCtrl.push(SearchPage);
   }
 }
 
