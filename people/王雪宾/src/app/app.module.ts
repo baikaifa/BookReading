@@ -1,6 +1,5 @@
 import { SousuoPage } from './../pages/sousuo/sousuo';
 import { ClassifyPage } from './../pages/classify/classify';
-import { SearchPage } from './../pages/search/search';
 import { BookstorePage } from './../pages/bookstore/bookstore';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
