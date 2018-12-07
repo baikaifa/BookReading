@@ -27,6 +27,9 @@ import { QiandaoPage } from '../shujia/qiandao/qiandao';//签到页面
 import { SousuoPage } from '../shujia/sousuo/sousuo';
 import { SearhPage } from '../pages/bookstore/searh/searh';
 import { ReadPage } from '../pages/bookstore/read/read';
+import{YuanchaungtuijianPage} from '../pages/yuanchaungtuijian/yuanchaungtuijian';
+import{LiangshengPage} from '../pages/liangsheng/liangsheng';
+import{WritenovelPage} from '../pages/writenovel/writenovel';
 @NgModule({
   declarations: [
     MyApp,
@@ -47,7 +50,10 @@ import { ReadPage } from '../pages/bookstore/read/read';
     QiandaoPage,
     SousuoPage,
     SearhPage,
-    ReadPage
+    ReadPage,
+    YuanchaungtuijianPage,
+    LiangshengPage,
+    WritenovelPage
   ],
   imports: [
     BrowserModule,
@@ -76,7 +82,10 @@ import { ReadPage } from '../pages/bookstore/read/read';
     QiandaoPage,
     SousuoPage,
     SearhPage,
-    ReadPage
+    ReadPage,
+    YuanchaungtuijianPage,
+    LiangshengPage,
+    WritenovelPage
   ],
   providers: [
     StatusBar,

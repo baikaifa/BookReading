@@ -28,11 +28,11 @@
           <p>原创推荐</p>
         </div>
         <div id="noval">
-          <img src="../../assets/imgs/封面.png" id="onenoval">
+          <img src="../../assets/imgs/封面.png" id="onenoval" (click)="goYuanchuangtuijian()">
           <img src="../../assets/imgs/封面.png" id="twonoval">
           <img src="../../assets/imgs/封面.png" id="threenoval">
           <img src="../../assets/imgs/封面.png" id="fournoval">
-          <span>书名1</span>
+          <span (click)="goYuanchuangtuijian()">书名1</span>
           <span>书名1</span>
           <span>书名1</span>
           <span>书名1</span>
@@ -55,10 +55,25 @@
         </div>
       </div>
       <div *ngSwitchCase="1">
-        <div class="dlxx">
-          <span>原创福利</span>
-          <span>回收站</span>
-          <span>常见问题</span>
+        <ion-icon class="icon2" name="md-more" (click)="isShow()" class="changePositon" id="changePosition1"></ion-icon>
+        <div  *ngIf="flag" class="changePositon" id="changeContnet">
+          <ul>
+            <li>
+                <ion-icon name="ios-book-outline"></ion-icon><span>更新连载书</span>
+            </li>
+            <li>
+                <ion-icon name="ios-download-outline"></ion-icon><span>下载管理</span>
+            </li>
+            <li>
+                <ion-icon name="ios-log-in-outline"></ion-icon><span>本地导入</span>
+            </li>
+            <li>
+                <ion-icon name="ios-wifi-outline"></ion-icon><span>wifi传书</span>
+            </li>
+            <li>
+                <ion-icon name="ios-bookmarks-outline"></ion-icon><span>书籍管理</span>
+            </li>
+          </ul>
         </div>
         <div class="zp">
           <img src="../../assets/imgs/hlogo.png">
@@ -68,7 +83,7 @@
         <div class="write">
           <img src="../../assets/imgs/原创/add.png">
           <img src="../../assets/imgs/原创/fuben.png">
-          <img src="../../assets/imgs/原创/不住院的凉生.png">
+          <img src="../../assets/imgs/原创/不住院的凉生.png" [navPush]="LiangshengPage" >
         </div>
       </div>
     </div>

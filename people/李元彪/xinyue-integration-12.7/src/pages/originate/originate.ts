@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import{YuanchaungtuijianPage} from '../../pages/yuanchaungtuijian/yuanchaungtuijian'
+import{LiangshengPage} from '../../pages/liangsheng/liangsheng';
 /**
  * Generated class for the OriginatePage page.
  *
@@ -14,6 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'originate.html',
 })
 export class OriginatePage {
+  public LiangshengPage=LiangshengPage;
+  public flag=false;//是否显示更新连载书
   icons:string="camera";
   items = [];
   isActive = 0;
@@ -28,4 +31,14 @@ export class OriginatePage {
     console.log('ionViewDidLoad OriginatePage');
   }
 
+  isShow(){
+    if(this.flag==true){
+      this.flag=false;
+    }else{
+      this.flag=true;
+    }
+  }
+  goYuanchuangtuijian(){
+    this.navCtrl.push(YuanchaungtuijianPage);
+  }
 }
