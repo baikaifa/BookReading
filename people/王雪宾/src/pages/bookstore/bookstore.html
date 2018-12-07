@@ -4,7 +4,7 @@
       <ul>
         <li *ngFor='let item of arr;let idx=index;' (click)="isClick(idx)"
         [class.first]="isActive==idx" class="first" ><span>{{arr[idx]}}</span></li>
-        <li><ion-icon name="search" (click)="gosearch()"></ion-icon></li>
+        <li><ion-icon name="ios-search-outline" (click)="gosearch()"></ion-icon></li>
       </ul>
     </div>
     <div [ngSwitch]="isActive">
@@ -15,7 +15,7 @@
         <div class="rotation">
           <ion-slides  loop=true autoplay="2000">
             <ion-slide>
-              <img src="../../assets/imgs/一刹风雨.png" alt=""  >
+              <img src="../../assets/imgs/一刹风雨.png" alt="" >
             </ion-slide>
             <ion-slide>
               <img src="../../assets/imgs/女强甜.png" alt="" >
@@ -36,7 +36,7 @@
             <img src="../../assets/imgs/精品汇聚.png" alt="logo" id="xian">
             <br/>
             <div>
-              <img src="../../assets/imgs/精品推荐/修仙我才是女主.png" alt="">
+              <img src="../../assets/imgs/精品推荐/修仙我才是女主.png" alt="" (click)="goread()">
               <img src="../../assets/imgs/精品推荐/013号凶案.png" alt="">
               <img src="../../assets/imgs/精品推荐/仵逆.png" alt="">
               <img src="../../assets/imgs/精品推荐/娇软小媳妇.png" alt="">
