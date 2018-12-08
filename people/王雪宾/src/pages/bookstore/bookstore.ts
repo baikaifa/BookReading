@@ -1,4 +1,5 @@
-import { SearchPage } from './../search/search';
+import { SousuoPage } from './../sousuo/sousuo';
+import { ReadPage } from './../read/read';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -8,7 +9,8 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'bookstore.html'
 })
 export class BookstorePage {
-  SearchPage;
+  SousuoPage;
+  ReadPage;
   // @ViewChild('ac') ac;
   icons:string="camera";
   items = [];
@@ -18,11 +20,15 @@ export class BookstorePage {
   }
   arr=['精选','女生','男生','漫画'];
   constructor(public navCtrl: NavController) {
-    this.SearchPage = SearchPage;
+    this.SousuoPage = SousuoPage;
+    this.ReadPage = ReadPage;
   }
   gosearch(){
     //跳转到指定页面
-    this.navCtrl.push(SearchPage);
+    this.navCtrl.push(SousuoPage);
+  }
+  goread(){
+    this.navCtrl.push(ReadPage);
   }
 }
 
