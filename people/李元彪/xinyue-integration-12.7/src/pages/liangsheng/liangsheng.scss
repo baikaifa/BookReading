@@ -1,0 +1,44 @@
+page-liangsheng {
+    .top{
+        width: 100%;
+        height: 100px;
+    }
+    .twoDiv{
+        display: flex; /*开启弹性盒模型（伸缩布局）*/
+        align-items: center;
+        justify-content:center; /*两端对齐*/
+        width: 20%;
+        height: 15%;
+        outline:#00ff00 solid thick;
+    }
+    #img1{
+        width: 20%;
+        height: 120%;
+        margin-left: 3%;
+        margin-top: 6%;
+    }
+    #liangsheng{
+        margin-left: 30%;
+        margin-top: -30%;
+        font-size: 120%;
+    }
+    #gengxin{
+        margin-left: 30%;
+    }
+    #changePosition{
+        margin-left: 65%;
+        margin-top: -3.7%;
+    }
+    #changePosition1{
+        margin-left: 35%;
+    }
+    #floatRight{
+        float: right;
+        margin-right: 3%;
+        color: #A88889;
+        margin-top: -10%;
+    }
+    .bottom{
+        margin-top: 20%;
+    }
+}

@@ -1,0 +1,165 @@
+  <ion-content>
+    <!-- 导航栏 -->
+    <div class="navList">
+      <ul>
+        <li *ngFor='let item of arr;let idx=index;' (click)="isClick(idx)"
+        [class.first]="isActive==idx" class="first" ><span>{{arr[idx]}}</span></li>
+        <li><ion-icon name="ios-search-outline" (click)="gosearch()"></ion-icon></li>
+      </ul>
+    </div>
+    <div [ngSwitch]="isActive">
+      <span>&nbsp;</span>
+      <!-- 精品 -->
+      <div *ngSwitchCase="0">
+        <!-- 轮播 -->
+        <div class="rotation">
+          <ion-slides  loop=true autoplay="2000">
+            <ion-slide>
+              <img src="../../assets/imgs/一刹风雨.png" alt="" >
+            </ion-slide>
+            <ion-slide>
+              <img src="../../assets/imgs/女强甜.png" alt="" >
+            </ion-slide>
+            <ion-slide>
+              <img src="../../assets/imgs/公子谋.png" alt="" >
+            </ion-slide>
+          </ion-slides>
+        </div>
+        <div id="moddle">
+          <img src="../../assets/imgs/分类.png" alt="logo">
+          <img src="../../assets/imgs/榜单.png" alt="logo">
+          <img src="../../assets/imgs/会员.png" alt="logo">
+          <img src="../../assets/imgs/完结.png" alt="logo">
+          <img src="../../assets/imgs/出版.png" alt="logo">
+        </div>
+        <div id="end">
+            <img src="../../assets/imgs/精品汇聚.png" alt="logo" id="xian">
+            <br/>
+            <div>
+              <img src="../../assets/imgs/精品推荐/修仙我才是女主.png" alt="" (click)="goread()">
+              <img src="../../assets/imgs/精品推荐/013号凶案.png" alt="">
+              <img src="../../assets/imgs/精品推荐/仵逆.png" alt="">
+              <img src="../../assets/imgs/精品推荐/娇软小媳妇.png" alt="">
+              <br>
+              <img src="../../assets/imgs/精品推荐/幸福私家菜.png" alt="">
+              <img src="../../assets/imgs/精品推荐/至尊股神.png" alt="">
+              <img src="../../assets/imgs/精品推荐/闪婚.png" alt="">
+              <img src="../../assets/imgs/精品推荐/风水师.png" alt="">
+            </div>
+        </div>
+      </div>
+      <!-- 女生 -->
+      <div *ngSwitchCase="1">
+        <!-- 轮播 -->
+        <div class="rotation">
+            <ion-slides  loop=true autoplay="2000">
+              <ion-slide>
+                <img src="../../assets/imgs/女生/轮播图/将军的美味.png" alt=""  >
+              </ion-slide>
+              <ion-slide>
+                <img src="../../assets/imgs/女生/轮播图/冷面将军.png" alt="" >
+              </ion-slide>
+              <ion-slide>
+                <img src="../../assets/imgs/女生/轮播图/女生十月完结小说.png" alt="" >
+              </ion-slide>
+            </ion-slides>
+          </div>
+          <div id="moddle">
+            <img src="../../assets/imgs/分类.png" alt="logo">
+            <img src="../../assets/imgs/榜单.png" alt="logo">
+            <img src="../../assets/imgs/会员.png" alt="logo">
+            <img src="../../assets/imgs/完结.png" alt="logo">
+            <img src="../../assets/imgs/出版.png" alt="logo">
+          </div>
+          <div id="end">
+              <img src="../../assets/imgs/女生/女生精品/女生精品.png" alt="logo" id="xian">
+              <br/>
+              <div>
+                <img src="../../assets/imgs/女生/女生精品/不死魂女.png" alt="">
+                <img src="../../assets/imgs/女生/女生精品/医女狂妃.png" alt="">
+                <img src="../../assets/imgs/女生/女生精品/妻约已过.png" alt="">
+                <img src="../../assets/imgs/女生/女生精品/我的美女俏总裁.png" alt="">
+                <br>
+                <img src="../../assets/imgs/女生/女生精品/报告首长.png" alt="">
+                <img src="../../assets/imgs/女生/女生精品/甜甜厨娘.png" alt="">
+                <img src="../../assets/imgs/女生/女生精品/肥妞.png" alt="">
+                <img src="../../assets/imgs/女生/女生精品/都市之修仙.png" alt="">
+              </div>
+          </div>
+      </div>
+
+      <!-- 男生 -->
+      <div *ngSwitchCase="2">
+        <!-- 轮播 -->
+        <div class="rotation">
+          <ion-slides  loop=true autoplay="2000">
+            <ion-slide>
+              <img src="../../assets/imgs/男生/轮播图/0.png" alt=""  >
+            </ion-slide>
+            <ion-slide>
+              <img src="../../assets/imgs/男生/轮播图/1.png" alt="" >
+            </ion-slide>
+            <ion-slide>
+              <img src="../../assets/imgs/男生/轮播图/2.png" alt="" >
+            </ion-slide>
+          </ion-slides>
+        </div>
+        <div id="moddle">
+          <img src="../../assets/imgs/分类.png" alt="logo">
+          <img src="../../assets/imgs/榜单.png" alt="logo">
+          <img src="../../assets/imgs/会员.png" alt="logo">
+          <img src="../../assets/imgs/完结.png" alt="logo">
+          <img src="../../assets/imgs/出版.png" alt="logo">
+        </div>
+        <div id="end">
+            <img src="../../assets/imgs/男生/男生精品/男生精品.png" alt="logo" id="xian">
+            <br/>
+            <div>
+              <img src="../../assets/imgs/男生/男生精品/0.png" alt="">
+              <img src="../../assets/imgs/男生/男生精品/1.png" alt="">
+              <img src="../../assets/imgs/男生/男生精品/2.png" alt="">
+              <img src="../../assets/imgs/男生/男生精品/3.png" alt="">
+              <br>
+              <img src="../../assets/imgs/男生/男生精品/4.png" alt="">
+              <img src="../../assets/imgs/男生/男生精品/5.png" alt="">
+              <img src="../../assets/imgs/男生/男生精品/6.png" alt="">
+              <img src="../../assets/imgs/男生/男生精品/7.png" alt="">
+            </div>
+        </div>
+      </div>
+
+      <!-- 漫画 -->
+      <div *ngSwitchCase="3">
+        <!-- 轮播 -->
+        <div class="rotation">
+          <ion-slides  loop=true autoplay="2000">
+            <ion-slide>
+              <img src="../../assets/imgs/漫画/轮播图/0.png" alt=""  >
+            </ion-slide>
+            <ion-slide>
+              <img src="../../assets/imgs/漫画/轮播图/1.png" alt="" >
+            </ion-slide>
+            <ion-slide>
+              <img src="../../assets/imgs/漫画/轮播图/2.png" alt="" >
+            </ion-slide>
+          </ion-slides>
+        </div>
+        <div id="end-manhua">
+            <img src="../../assets/imgs/漫画/轻小说推荐/轻小说推荐.png" alt="logo" id="xian">
+            <br/>
+            <div>
+              <img src="../../assets/imgs/漫画/轻小说推荐/0.png" alt="">
+              <img src="../../assets/imgs/漫画/轻小说推荐/1.png" alt="">
+              <img src="../../assets/imgs/漫画/轻小说推荐/2.png" alt="">
+              <br>
+              <img src="../../assets/imgs/漫画/轻小说推荐/3.png" alt="">
+              <img src="../../assets/imgs/漫画/轻小说推荐/4.png" alt="">
+              <img src="../../assets/imgs/漫画/轻小说推荐/5.png" alt="">
+            </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </ion-content>

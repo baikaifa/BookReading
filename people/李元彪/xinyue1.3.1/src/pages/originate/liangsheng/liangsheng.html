@@ -1,0 +1,39 @@
+<!--
+  Generated template for the LiangshengPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <!-- <ion-title>liangsheng</ion-title> -->
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<div class="top">
+    <img src="../../assets/imgs/原创/fuben.png"  id="img1">
+    <p id="liangsheng">梁生</p>
+    <p id="gengxin"><span>更新中</span> <span>散文</span>   </p>
+    <ul>
+      <li class="twoDiv" id="lengther">申请加精</li>
+      <li class="twoDiv">阅读数</li>
+    </ul>
+    <!-- <div class="twoDiv" id="changePosition1">
+申请加精
+    </div>
+    <div class="twoDiv" id="changePosition">
+     阅读数
+      </div> -->
+</div>
+<div class="bottom">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;已写1章，共12个字</p>
+<hr>
+<p [navPush]="WritenovelPage">&nbsp;&nbsp;&nbsp;&nbsp;第一章&nbsp;急急急 <span  id="floatRight" (click)="$event.stopPropagation();" (click)="presentActionSheet()">&nbsp;<ion-icon class="icon2" name="md-more" ></ion-icon></span> </p>
+<hr>
+</div>
+</ion-content>
