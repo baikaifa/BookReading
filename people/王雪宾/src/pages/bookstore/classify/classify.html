@@ -1,0 +1,131 @@
+<!--
+  Generated template for the ClassifyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header style="height: 0%;">
+   <!-- 导航栏 -->
+   <div >
+      <ul class="navList">
+        <li style="font-size: 40px;color:gray;margin-left: 3%;font-weight: bold" (click)="fanhui()"> < </li>
+        <li *ngFor='let item of arr;let idx=index;' (click)="isClick(idx)"
+        [class.first]="isActive==idx" class="first" ><span>{{arr[idx]}}</span></li>
+      </ul>
+    </div>
+  </ion-header>
+
+<ion-content>
+
+    <div [ngSwitch]="isActive">
+      <!-- 男生 -->
+      <div *ngSwitchCase="0">
+        <div class="tuijian">
+          <span style="color: gray;">根据阅读兴趣推荐</span>
+          <br><br>
+          <button>异能</button>
+          <button>功夫</button>
+          <button>风水</button>
+          <button>透视</button>
+          <button>美女全收</button>
+        </div>
+        <div class="end">
+              <img src="../../../assets/imgs/分类/男生/仙侠.png" alt="">
+              <img src="../../../assets/imgs/分类/男生/历史.png" alt="">
+              <img src="../../../assets/imgs/分类/男生/游戏.png" alt="">
+              <img src="../../../assets/imgs/分类/男生/灵异.png" alt="">
+              <img src="../../../assets/imgs/分类/男生/玄幻.png" alt="">
+              <img src="../../../assets/imgs/分类/男生/都市.png" alt="">
+              <img src="../../../assets/imgs/分类/男生/仙侠.png" alt="">
+              <img src="../../../assets/imgs/分类/男生/历史.png" alt="">
+              <img src="../../../assets/imgs/分类/男生/游戏.png" alt="">
+              <img src="../../../assets/imgs/分类/男生/灵异.png" alt="">
+              <img src="../../../assets/imgs/分类/男生/玄幻.png" alt="">
+        </div>
+      </div>
+      <!-- 女生 -->
+      <div *ngSwitchCase="1">
+          <div class="tuijian">
+              <span style="color: gray;">根据阅读兴趣推荐</span>
+              <br><br>
+              <button>异能</button>
+              <button>功夫</button>
+              <button>风水</button>
+              <button>透视</button>
+              <button>美女全收</button>
+            </div>
+            <div class="end">
+                  <img src="../../../assets/imgs/分类/男生/仙侠.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/历史.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/游戏.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/灵异.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/玄幻.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/都市.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/仙侠.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/历史.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/游戏.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/灵异.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/玄幻.png" alt="">
+            </div>
+      </div>
+
+      <!-- 出版 -->
+      <div *ngSwitchCase="2">
+          <div class="tuijian">
+              <span style="color: gray;">根据阅读兴趣推荐</span>
+              <br><br>
+              <button>异能</button>
+              <button>功夫</button>
+              <button>风水</button>
+              <button>透视</button>
+              <button>美女全收</button>
+            </div>
+            <div class="end">
+                <img src="../../../assets/imgs/分类/男生/历史.png" alt="">
+                <img src="../../../assets/imgs/分类/男生/游戏.png" alt="">
+                <img src="../../../assets/imgs/分类/男生/灵异.png" alt="">
+                <img src="../../../assets/imgs/分类/男生/玄幻.png" alt="">
+                <img src="../../../assets/imgs/分类/男生/历史.png" alt="">
+                <img src="../../../assets/imgs/分类/男生/游戏.png" alt="">
+                <img src="../../../assets/imgs/分类/男生/灵异.png" alt="">
+                <img src="../../../assets/imgs/分类/男生/玄幻.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/仙侠.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/历史.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/游戏.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/灵异.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/玄幻.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/都市.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/仙侠.png" alt="">
+
+            </div>
+      </div>
+      <div *ngSwitchCase="3">
+          <div class="tuijian">
+              <span style="color: gray;">根据阅读兴趣推荐</span>
+              <br><br>
+              <button>异能</button>
+              <button>功夫</button>
+              <button>风水</button>
+              <button>透视</button>
+              <button>美女全收</button>
+            </div>
+            <div class="end">
+                  <img src="../../../assets/imgs/分类/男生/仙侠.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/历史.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/游戏.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/灵异.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/玄幻.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/都市.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/仙侠.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/历史.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/游戏.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/灵异.png" alt="">
+                  <img src="../../../assets/imgs/分类/男生/玄幻.png" alt="">
+            </div>
+      </div>
+      </div>
+
+
+
+  </ion-content>
+

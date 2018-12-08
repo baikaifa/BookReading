@@ -1,0 +1,29 @@
+page-bangdan {
+  .navList{
+    .first{
+      border-style:opx;
+      border-bottom: 3px solid rgb(50, 205, 128);
+      border-bottom-width:4px;
+    }
+        position:relative;
+        height: 44px;
+        line-height: 44px;
+        padding-left: 0!important;
+        margin-top: 1%;
+      li{
+        list-style-type:none;
+        float: left;
+        margin-left: 16%;
+        span{
+          font-size:16px;
+          letter-spacing:2px;
+        }
+       }
+    }
+    .begin{
+      margin-left: -5%;
+      img{
+        width: 100%;
+      }
+    }
+}

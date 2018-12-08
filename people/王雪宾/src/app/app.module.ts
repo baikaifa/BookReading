@@ -1,5 +1,8 @@
-import { SousuoPage } from './../pages/sousuo/sousuo';
-import { ClassifyPage } from './../pages/classify/classify';
+import { ChubanPage } from './../pages/bookstore/chuban/chuban';
+import { BangdanPage } from './../pages/bookstore/bangdan/bangdan';
+import { ClassifyPage } from './../pages/bookstore/classify/classify';
+import { PinglunPage } from './../pages/read/pinglun/pinglun';
+import { SearhPage } from './../pages/searh/searh';
 import { BookstorePage } from './../pages/bookstore/bookstore';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,6 +15,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ReadPage } from '../pages/read/read';
+import { WanjiePage } from '../pages/bookstore/wanjie/wanjie';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,13 @@ import { ReadPage } from '../pages/read/read';
     ContactPage,
     BookstorePage,
     TabsPage,
-    ClassifyPage,
     ReadPage,
-    SousuoPage,
+    SearhPage,
+    PinglunPage,
+    ClassifyPage,
+    BangdanPage,
+    ChubanPage,
+    WanjiePage,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +43,13 @@ import { ReadPage } from '../pages/read/read';
     ContactPage,
     BookstorePage,
     TabsPage,
-    ClassifyPage,
     ReadPage,
-    SousuoPage,
+    SearhPage,
+    PinglunPage,
+    ClassifyPage,
+    BangdanPage,
+    ChubanPage,
+    WanjiePage,
   ],
   providers: [
     StatusBar,

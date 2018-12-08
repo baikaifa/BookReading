@@ -8,7 +8,6 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <div>
     <div class="fengmian">
       <ul>
         <li><img src="../../assets/imgs/read/修仙我才是女主.png"></li>
@@ -20,7 +19,7 @@
       </ul>
     </div>
     <div>
-        <textarea rows="8" cols="48" readonly="readonly" style="color: goldenrod;background-color: floralwhite">
+        <textarea rows="5" cols="48" readonly="readonly" style="color: goldenrod;background-color: floralwhite">
         被好姐妹骆星陷害追杀囚禁的晏青阳重生了，重生于幼时。本来她打算驱逐骆星，再次修仙，保护家人。
         结果却发现她和骆星的资质互换了。骆星拥有了她前世的灵根，成为了绝世天才。而她，则成了绝世废柴！
         于是，她开启了修仙生涯中的地狱模式最终，晏青阳冷冷一笑：嘿，那个女配，你注定只是黯淡的星辰，
@@ -65,17 +64,40 @@
             </button>
           </ion-list>
     </div>
+    <div class="shuping">
+      <ul>
+        <li style=" font-size:15px;font-family:Simsun;margin-left: -10%">
+          <span style=" font-size:15px;font-family:Simsun;color: rgb(50, 205, 128);font-weight:bold">|</span>书友互动
+        </li>
+        <li style=" font-size:11px;font-family:Simsun;color: rgb(50, 205, 128);margin-left: 75%" (click)="gopinglun()">
+          写评论
+        </li>
+      </ul>
+      <br>
+      <ul>
+        <li style="margin-left: 10%"><h5>4.4</h5></li>
+        <li style="margin-left: 20%"><h5>662</h5></li>
+        <li style="margin-left: 15%"><h5>7054</h5></li>
+      </ul>
+      <ul style="margin-top: 14%">
+          <li style="color:grey;margin-left: -70%">书籍评分</li>
+          <li style="color:grey;margin-left: -42%">累计评论</li>
+          <li style="color:grey;margin-left: -13.5% ">人气值</li>
+      </ul>
+    </div>
+    <br>
     <div class="end">
-      <button>
+      <div style="color:rgb(50, 205, 128) ">
         加书架
-      </button>
-      <button>
-        开始阅读
-      </button>
-      <button>
-        下载
-      </button>
-
       </div>
-  </div>
+
+      <div style="color:white;background-color:rgb(50, 205, 128)">
+        开始阅读
+      </div>
+
+      <div style="color:rgb(50, 205, 128) ">
+        下载
+      </div>
+
+    </div>
 </ion-content>

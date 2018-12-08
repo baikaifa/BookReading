@@ -1,3 +1,4 @@
+import { PinglunPage } from './../read/pinglun/pinglun';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Img } from 'ionic-angular';
 
@@ -14,13 +15,16 @@ import { IonicPage, NavController, NavParams, Img } from 'ionic-angular';
   templateUrl: 'read.html',
 })
 export class ReadPage {
+  PinglunPage;
   itemSelected(item: string) {
     console.log("Selected Item", item);
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+    this.PinglunPage = PinglunPage;
   }
 
-
+  gopinglun(){
+    this.navCtrl.push(PinglunPage);
+  }
 }

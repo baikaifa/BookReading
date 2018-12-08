@@ -1,4 +1,8 @@
-import { SousuoPage } from './../sousuo/sousuo';
+import { WanjiePage } from './wanjie/wanjie';
+import { ChubanPage } from './chuban/chuban';
+import { BangdanPage } from './bangdan/bangdan';
+import { ClassifyPage } from './../bookstore/classify/classify';
+import { SearhPage } from './../searh/searh';
 import { ReadPage } from './../read/read';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -9,8 +13,12 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'bookstore.html'
 })
 export class BookstorePage {
-  SousuoPage;
+  ClassifyPage;
+  SearhPage;
   ReadPage;
+  BangdanPage;
+  ChubanPage;
+  WanjiePage;
   // @ViewChild('ac') ac;
   icons:string="camera";
   items = [];
@@ -20,15 +28,31 @@ export class BookstorePage {
   }
   arr=['精选','女生','男生','漫画'];
   constructor(public navCtrl: NavController) {
-    this.SousuoPage = SousuoPage;
+    this.SearhPage = SearhPage;
     this.ReadPage = ReadPage;
+    this.ClassifyPage = ClassifyPage;
+    this.BangdanPage = BangdanPage;
+    this.ChubanPage = ChubanPage;
+    this. WanjiePage =  WanjiePage;
   }
   gosearch(){
     //跳转到指定页面
-    this.navCtrl.push(SousuoPage);
+    this.navCtrl.push(SearhPage);
   }
   goread(){
     this.navCtrl.push(ReadPage);
+  }
+  goclassfy(){
+    this.navCtrl.push(ClassifyPage);
+  }
+  gobangdan(){
+    this.navCtrl.push(BangdanPage);
+  }
+  gochuban(){
+    this.navCtrl.push(ChubanPage);
+  }
+  gowanjie(){
+    this.navCtrl.push( WanjiePage);
   }
 }
 
