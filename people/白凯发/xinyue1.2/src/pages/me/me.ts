@@ -43,5 +43,8 @@ public LoginPage=LoginPage;
   goqianbao() {
     this.navCtrl.push(QianbaoPage);
   }
+  goYueli(){
+    this.navCtrl.push(YueliPage);
+  }
 
 }
