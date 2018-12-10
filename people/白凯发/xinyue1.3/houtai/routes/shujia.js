@@ -9,7 +9,7 @@ const db = mysql.createPool({
 });
 
 //书架
-router.get('/api/shujia', (req, res)=>{
+router.get('/shujia', (req, res)=>{
     //查询banner的东西
     db.query("SELECT * FROM shujia_table", (err, data)=>{
       if(err){
