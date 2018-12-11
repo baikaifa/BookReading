@@ -1,0 +1,44 @@
+page-classify {
+  .navList{
+    .first{
+      border-style:opx;
+      border-bottom: 3px solid rgb(50, 205, 128);
+      border-bottom-width:4px;
+    }
+        position:relative;
+        height: 44px;
+        line-height: 44px;
+        padding-left: 0!important;
+        margin-top: 1%;
+      li{
+        list-style-type:none;
+        float: left;
+        margin-left: 10%;
+        span{
+          font-size:16px;
+          letter-spacing:2px;
+          font-weight: bolder;
+        }
+       }
+    }
+    .tuijian{
+      margin-top: 20%;
+      margin-left: 3%;
+      button{
+        border-style:solid;
+        border-width:1px;
+        font-size: 16px;
+        background-color: white;
+      }
+    }
+    .end{
+      background-color:gainsboro;
+      margin-top: 5%;
+      img{
+        margin-top: 4%;
+        margin-left: 3%;
+        width: 45%;
+      }
+    }
+
+}
