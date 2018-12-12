@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form action="http://127.0.0.1:8888/process_post" id="myForm" method="post">
+        <select name="first_which_table">
+            <optgroup labael="第一组">
+                <option value="boys_table">boys_table</option>
+                <option value="comic_table">comic_table</option>
+                <option value="girls_table">girls_table</option>
+                <option value="shujia_table">shujia_table</option>
+            </optgroup>
+        </select>
+        pic_src: <input type="text" name="pic_srcs" id="">
+        name: <input type="text" name="names" />
+        author: <input type="text" name="authors" id="">
+        <input class="myForm" type="button" value="增加" />
+    </form>
+    <form action="http://127.0.0.1:8888/del_post">
+        <select name="which_table">
+            <optgroup labael="第一组">
+                <option value="boys_table">boys_table</option>
+                <option value="comic_table">comic_table</option>
+                <option value="girls_table">girls_table</option>
+                <option value="shujia_table">shujia_table</option>
+            </optgroup>
+        </select>
+        id: <input type="text" id="second_book_id">
+        <input class="fxk" type="button" value="删除">
+    </form>
+    <form action="http://127.0.0.1:8888/query_post">
+        <select name="second_which_table">
+            <optgroup labael="第一组">
+                <option value="boys_table">boys_table</option>
+                <option value="comic_table">comic_table</option>
+                <option value="girls_table">girls_table</option>
+                <option value="shujia_table">shujia_table</option>
+            </optgroup>
+        </select>
+        书名: <input type="text" id="second_book_name">
+        作者: <input type="text" name="" id="second_book_author">
+        书名或作者任写其一即可
+        <input class="fxk2" type="button" value="点击查询">
+        查询到它的id是: <input type="text" name="" style="border:none" id="book_id">
+    </form>
+    <form action="http://127.0.0.1:8888/process_update" id="myForm2" method="post">
+        <select name="first_which_table">
+            <optgroup labael="第一组">
+                <option value="boys_table">boys_table</option>
+                <option value="comic_table">comic_table</option>
+                <option value="girls_table">girls_table</option>
+                <option value="shujia_table">shujia_table</option>
+            </optgroup>
+        </select>
+        要修改的id:<input type="text" id="third_id">
+        pic_src: <input type="text" name="pic_srcs" id="">
+        name: <input type="text" name="names" />
+        author: <input type="text" name="authors" id="">
+        <input class="myForm_2" type="button" value="修改" />
+    </form>
+    <form action="http://127.0.0.1:8888/api" method="post" enctype="multipart/form-data">
+        文件：<input type="file" id="file_load_second" name="f1" /><br>
+        <input type="submit" id="file_load" value="上传">
+        </form>
+        <script type="text/javascript">
+            $(function () {
+                $("#file_load").on('click', function () {
+                    setTimeout(function(){
+                        var file_load_second = document.getElementById('file_load_second');
+                        file_load_second.value = ''; //虽然file的value不能设为有字符的值，但是可以设置为空值
+                    },1000)
+                    var fileObj = document.getElementById("file_load_second").files[0]; // js 获取文件对象
+                    var formFile = new FormData();
+                    formFile.append("action", "UploadVMKImagePath");
+                    formFile.append("file", fileObj); //加入文件对象
+                    var data = formFile;
+                    $.post("http://127.0.0.1:8888/api", { //jq的post方法
+                        data: data
+                    }, function (res) {
+                    });
+                   
+                })
+                $(".myForm_2").on('click', function () { //添加点击事件
+                    var id = $("#third_id").val();
+                    var first_which_table = $("select[name='first_which_table']").val();
+                    var pic_srcs = $("#myForm2 input:nth-of-type(2)").val(); //获取两个的参数
+                    var names = $("#myForm2 input:nth-of-type(3)").val(); //获取两个的参数
+                    var authors = $("#myForm2 input:nth-of-type(4)").val();
+                    $.post("http://127.0.0.1:8888/process_update", { //jq的post方法
+                        id: id,
+                        first_which_table: first_which_table,
+                        pic_srcs: pic_srcs,
+                        names: names,
+                        authors: authors,
+                    }, function (res) {
+                        alert("修改成功");
+                    });
+                    $("input:not(:button)").val("")
+                });
+                $(".fxk2").on('click', function () {
+                    var which_table = $("select[name='second_which_table']").val();
+                    var book_name = $("#second_book_name").val();
+                    var author = $("#second_book_author").val();
+                    // alert(which_table);
+                    // alert(book_name);
+                    $.post("http://127.0.0.1:8888/query_post", { //jq的post方法
+                        which_table: which_table,
+                        book_name: book_name,
+                        author: author
+                    }, function (res) {
+                        $("#book_id").val(res);
+                    })
+                    $("input:not(:button)").val("")
+                })
+                $(".fxk").on('click', function () {
+                    var which_table = $("select[name='which_table']").val();
+                    var id = $("#second_book_id").val();
+                    $.post("http://127.0.0.1:8888/del_post", { //jq的post方法
+                        which_table: which_table,
+                        id: id
+                    }, function (res) {
+                        alert("删除成功");
+                    })
+                    $("input:not(:button)").val("")
+                })
+                $(".myForm").on('click', function () { //添加点击事件
+                    var first_which_table = $("select[name='first_which_table']").val();
+                    var pic_srcs = $("#myForm input:nth-of-type(1)").val(); //获取两个的参数
+                    var names = $("#myForm input:nth-of-type(2)").val(); //获取两个的参数
+                    var authors = $("#myForm input:nth-of-type(3)").val();
+                    $.post("http://127.0.0.1:8888/process_post", { //jq的post方法
+                        first_which_table: first_which_table,
+                        pic_srcs: pic_srcs,
+                        names: names,
+                        authors: authors,
+                    }, function (res) {
+                        alert("提交成功");
+                    });
+                    $("input:not(:button)").val("")
+                });
+            })
+        </script>
+</body>
+
+</html>
