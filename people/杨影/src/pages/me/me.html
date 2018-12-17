@@ -15,7 +15,7 @@
 
 <ion-content>
   <div class="bgImage">
-    <div class="myTop">
+    <div class="myTop"  *ngIf="!userinfo">
       <img src="../../assets/imgs/v2_pij986.png" alt="">
       <img src="../../assets/imgs/vip.png" alt="">
       <a id="firstA" href="javascript:void(0)">
@@ -28,6 +28,19 @@
       <a id="sixthA" href="">1</a>
       <a id="seventhA" href="">3</a>
     </div>
+
+    <!-- 登陆后的页面 -->
+<ion-list *ngIf="userinfo">
+  <ion-item [navPush]='PersonalPage'>
+    <ion-avatar item-left>
+      <img src="xxx.png" onerror="this.src='../../../assets/imgs/my.png'" class="avatar" alt="">
+    </ion-avatar>
+    <h2>用户名:{{userinfo.tel}}</h2>
+    <p>普通会员</p>
+    <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+</ion-list>
+<!-- 登陆后的页面结束 -->
     <div class="content">
       <ion-list no-lines>
         <ion-item (click)="goqianbao()">

@@ -1,18 +1,18 @@
-<ion-content padding>
+<ion-content >
   <div class="navList">
     <ul>
       <button style="background-color:white;text-align:center;">
-        <li *ngFor='let item of arr; let idx=index;'(click)="isClick(idx)" 
+        <li *ngFor='let item of arr; let idx=index;' (click)="isClick(idx)" 
       [class.first]="isActive==idx">{{arr[idx]}}</li></button>
     </ul>
     <div [ngSwitch]="isActive">
       <div *ngSwitchCase="0">
         <div id="lbt">
-          <ion-slides  loop=true autoplay="2000">
-            <ion-slide>
-              <img src="../../assets/imgs/轮播图/1.png">
+          <ion-slides  loop=true autoplay="2000" *ngIf="arr2.length>0">
+            <ion-slide *ngFor="let item of arr2;let idx = index">
+              <img src="{{arr2[idx].src}}">
             </ion-slide>
-            <ion-slide>
+            <!-- <ion-slide>
               <img src="../../assets/imgs/轮播图/2.png">
             </ion-slide>
             <ion-slide>
@@ -20,55 +20,44 @@
             </ion-slide>
             <ion-slide>
               <img src="../../assets/imgs/轮播图/4.png">
-            </ion-slide>
+            </ion-slide> -->
           </ion-slides>
         </div>
-        <div id="yctj">
-          <img src="../../assets/imgs/hlogo.png">
-          <p>原创推荐</p>
+
+        <div class="title">
+          <div class="green"></div> 原创推荐
         </div>
-        <div id="noval">
-          <img src="../../assets/imgs/封面.png" id="onenoval">
-          <img src="../../assets/imgs/封面.png" id="twonoval">
-          <img src="../../assets/imgs/封面.png" id="threenoval">
-          <img src="../../assets/imgs/封面.png" id="fournoval">
-          <span>书名1</span>
-          <span>书名1</span>
-          <span>书名1</span>
-          <span>书名1</span>
+        <div class="sj">
+          <div class="book" *ngFor="let item of arr1; let idx=index;">
+            <img src="{{arr1[idx].pic_src}}" (click)="goRead()">
+            <div class="name">{{arr1[idx].book_name}}</div>
+          </div>
         </div>
-        <div id="gnHi" >
-          <img src="../../assets/imgs/hlogo.png">
-          <p>高能Hi聊</p>
+
+        <div class="title">
+          <div class="green"></div> 高能Hi聊
         </div>
-        <div id="yjh">
-          <p>讨论：最暖心的一句话</p>
-          <img src="../../assets/imgs/高能Hi聊/1.png">
-        </div>
-        <div id="sleep">
-          <p>你身边真的有人睡三四个小时...</p>
-          <img src="../../assets/imgs/高能Hi聊/2.png">
-        </div>
-        <div id="hhbd">
-          <p>00后黑话宝典，你知道多少？</p>
-          <img src="../../assets/imgs/高能Hi聊/3.png">
+        <div class="hhbd" >
+          <div [navPush]="pagesArr[idx]" class="chat" *ngFor="let item of arr3;let idx = index" >
+            <p>{{arr3[idx].text}}<br><br>
+            <ion-icon name="ios-thumbs-up-outline"></ion-icon>  {{arr3[idx].read}}
+            <ion-icon name="ios-chatboxes-outline"></ion-icon>  {{arr3[idx].talk}}</p>
+            <img src="{{arr3[idx].pic_src}}">
+          </div>
         </div>
       </div>
+
       <div *ngSwitchCase="1">
-        <div class="dlxx">
-          <span>原创福利</span>
-          <span>回收站</span>
-          <span>常见问题</span>
-        </div>
         <div class="zp">
-          <img src="../../assets/imgs/hlogo.png">
-          <span>我的作品</span>
-          <span id="tg">我要投稿</span>
+            <div class="title">
+              <div class="green"></div> 我的作品
+              <span class="tg">我要投稿</span>
+            </div>
         </div>
         <div class="write">
           <img src="../../assets/imgs/原创/add.png">
           <img src="../../assets/imgs/原创/fuben.png">
-          <img src="../../assets/imgs/原创/不住院的凉生.png">
+          <img src="../../assets/imgs/原创/不住院的凉生.png" (click)="goLS()">
         </div>
       </div>
     </div>

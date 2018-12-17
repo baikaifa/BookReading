@@ -10,8 +10,9 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ConfigProvider {
 //api请求地址
-  public apiUrl="http://39.108.159.135/";
-
+  // public apiUrl="http://127.0.0.1:3000";
+  // public apiUrl="http://localhost:8080";
+  public apiUrl="";
   constructor() {
     console.log('Hello ConfigProvider Provider');
   }

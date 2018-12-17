@@ -1,0 +1,66 @@
+page-chuban {
+  ion-content{
+   // background:whitesmoke!important;
+    .rotation{
+      height: 20%;
+      width: 100%;
+      margin-top:-4% ;
+      img{
+        width: 100%;
+      }
+    }
+    // .end{
+    //  p{
+    //    margin-left:3.5%;
+    //  }
+    //   margin-top: 3%;
+    //   .jx{
+    //     width: 93%;
+    //     margin-left: 3.5%;
+    //     margin-right: 3.5%;
+    //     //background:white;
+    //     .book{
+    //       width: 22%;
+    //       height: 140px;
+    //       float: left;
+    //       margin: 1.5%;
+    //       //background:white;
+    //       img{
+    //         width: 100%;
+    //         height: 110px;
+    //       }
+    //       div{
+    //         width: 95%;
+    //         margin-left: 2%;
+    //         overflow: hidden;
+    //       }
+    //       .black{
+    //         color: black;
+    //         font-size:14px;
+    //         height: 17px;
+    //       }
+    //       .gray{
+    //         color: gray;
+    //         font-size: 12px;
+    //         height: 15px;
+    //       }
+    //     }
+    //   }
+    // }
+    .newbook{
+      ul{
+        padding:0;
+        li{
+          border:1px solid red;
+          float:left;
+            width:22%;
+            margin:1.5%;
+          }
+      }
+    }
+    .lizhi{
+      border:1px solid red;
+    }
+  
+  }
+}

@@ -21,27 +21,29 @@ export class HttpServicesProvider {
   //apuUrl:api/plist?page=1
   requestData(apiUrl, callback) {
     if (apiUrl.indexOf("?") == -1) {
-      var api = this.config.apiUrl + apiUrl + '?callback=JSONP_CALLBACK'
+      var api = this.config.apiUrl + apiUrl //+ '?callback=JSONP_CALLBACK'
       // console.log(api);
     } else {
-      var api = this.config.apiUrl + apiUrl + '&callback=JSONP_CALLBACK'
+      var api = this.config.apiUrl + apiUrl //+ '&callback=JSONP_CALLBACK'
       console.log(api);
     }
-    this.jsonp.get(api).subscribe(function(data){
-      // console.log(data);
+    this.http.get(api).subscribe((data)=>{
+       console.log(data);
       // console.log(data['_body']);
-      callback(data);
+      // callback(data);
       //  callback(data['_body']);//异步要用回调函数来处理数据
     }, function(err) {
       console.log(err);
     })
   }
+  // this.http.get('/api').subscribe((data) => {
+  //   this.arr1 = JSON.parse(data['_body']);
+  //  console.log('我get了');
   //post
   doPost(apiUrl,json,callback){
     var api=this.config.apiUrl+apiUrl;
-
     this.http.post(api,JSON.stringify(json),{headers:this.headers}).subscribe(function(res){
-       callback(res.json()) 
+       callback(res.json()); 
     })
 
   }

@@ -1,0 +1,76 @@
+<!--
+  Generated template for the ChubanPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header text-center no-border>
+
+  <ion-navbar color="secondary">
+    <ion-title>出版</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name=""></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="rotation">
+        <ion-slides  loop=true autoplay="2000" *ngIf ="arr1.length>0">
+            <ion-slide *ngFor="let item of arr1;let idx=index">
+              <img src="{{arr1[idx].src}}"  >
+            </ion-slide>
+        </ion-slides>
+    </div>
+    <div class="newbook">
+      <p>新书尝鲜</p>
+      <ul>
+          <li *ngFor="let item of arr2;let idx=index">
+           <div class="book">
+              <img src={{arr2[idx].src}} ><br>
+              <div class="black">{{arr2[idx].name}}</div>
+              <div class="gray">{{arr2[idx].author}}</div>
+           </div>
+          </li>
+        </ul>
+    </div>
+
+
+
+
+      <div class="lizhi">
+        <ul>
+          <li>
+            <div class="img"><img src="../assets/imgs/1.jpg"></div>
+            <div class="jianjie">
+              <p class="biaoti">做灵魂有香气的女人</p>
+              <p class="author">(美)戴尔.卡耐基&nbsp;著&nbsp;张佳佳&nbsp;编译</p>
+              <p class="content">&nbsp;&nbsp;《做灵魂有香气的女人》是卡耐基写给女人的经典之作，书中卡耐基将自己关于人性研究的多...</p>
+              <p class="biaoqian"><span>完结</span><span>智慧</span><span>女性</span></p>
+            </div>
+          </li>
+          <li>
+              <div class="img"><img src=""></div>
+              <div class="jianjie">
+                <p class="biaoti">心是一只雪候鸟(精装版)</p>
+                <p class="author">秦玉花</p>
+                <p class="content">&nbsp;&nbsp;本书作者秦玉花是一位高度残疾的病人，她从出生就饱受病痛的折磨与摧残，她的眼失明...</p>
+                <p class="biaoqian"><span>完结</span><span>成长</span><span>病魔</span></p>
+              </div>
+            </li>
+            <li>
+                <div class="img"><img src=""></div>
+                <div class="jianjie">
+                  <p class="biaoti">人生没有彩排</p>
+                  <p class="author">达真堪布</p>
+                  <p class="content">&nbsp;&nbsp;许多人都在后悔，假如一切可以重来，假如再给我另一次机会，我一定选择...</p>
+                  <p class="biaoqian"><span>完结</span><span>生活</span><span>人生</span></p>
+                </div>
+              </li>
+        </ul>
+      </div>
+</ion-content>

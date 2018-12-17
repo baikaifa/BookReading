@@ -1,42 +1,26 @@
 page-xiaoxi {
     ion-content{
-        .head{
-            margin-bottom:5%; 
-            height:10%;
-            background:white;
-           ion-icon{
-               font-size:30px;
-               //border:1px solid red;
-               margin-top:3%;
-               margin-left:5%;
-           }
-           span{
-               font-size:20px;
-               //border:1px solid red;
-               margin-top:3%;
-               margin-left:30%;
-           }
-        }
-        ul{
+        .navList{
+            background-color: #fff;
             padding-left: 0!important;
             margin: 0;
-            height: 20%;
-            line-height: 20%;
-            li{
-                float:left;
-                height: 20%;
-                text-align: center;
-                width: 50%;
-                list-style-type:none;
-                font-size:18px;
-            }
+            height: 50px;
+            line-height: 50px;
             .first{
-                border-bottom:2px solid green;
+                border-bottom:4px solid #32db64;
+                color: #32db64;
+            }
+            li{
+                height: 50px;
+                text-align: center;
+                float: left;
+                width: 50%;
             }
         }
         p{
             text-align:center;
             color:gray;
+            margin-top: 20%;
         }
     }
 }

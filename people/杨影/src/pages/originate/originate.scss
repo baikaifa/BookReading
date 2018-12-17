@@ -1,24 +1,25 @@
 page-originate {
 ion-content{
-    // background-color: #ececec!important;
-    // background-size: cover;
     .navList{
         margin-top:3px;
+        height: 40px;
+        border-bottom: 1px solid #ececec;
         button{
             width: 100%; 
-            height: 30%;     
+            height: 35px;     
             li{
-            height: 20%;
+            height: 35px;
+            line-height: 35px;
             float: left;
             width: 50%;
             text-align: center;
             list-style: none;
             margin-left: -15px;
-            font-size: 14px;
+            font-size: 16px;
             }
             .first{
                 background-color: none;
-                color:#32db64;
+                color:green;
             }
         }
 
@@ -28,113 +29,76 @@ ion-content{
         position: relative;
         top:-10px;
     }
-    #yctj>img{
-        height: 35px;
-        width: 25px;
-        margin-top: -15px;
-    }
-    #yctj>p{
+    .title{
         display: block;
-        position: relative;
-        margin-left: 35px;
-        margin-top:-30px;
-    }
-    #noval>img{
-        height: 90px;
-        width: 20%;
-        float: left;
-        margin-left: 4%;
-    }
-
-    #noval>span{
-        text-align: center;
-        width: 20%;
-        float: left;
-        margin-left: 4%;
-    }
-    #gnHi>img{
-        height: 35px;
-        width: 25px;
-    }
-    #gnHi>p{
-        display: block;
-        position: relative;
-        margin-left: 35px;
-        margin-top:-30px;
-    }
-    #yjh{
-        height: 70px;
-        width: 340px;
-    }
-    #yjh>p{
-        text-indent: 10px;
-        display: block;
-        position: relative;
-        float: left;
-        width: 255px;
-    }
-    #yjh>img{
-        display: block;
-        position: relative;
-        height: 70px;
-        width: 70px;
-        float: left;
-    }
-    #sleep>p{
-        text-indent: 10px;
-        display: block;
-        position: relative;
-        float: left;
-        width: 255px;
-    }
-    #sleep>img{
-        display: block;
-        position: relative;
-        height: 70px;
-        width: 70px;
-        float: left;
-    }
-    #hhbd>p{
-        text-indent: 10px;
-        display: block;
-        position: relative;
-        float: left;
-        width: 255px;
-    }
-    #hhbd>img{
-        display: block;
-        position: relative;
-        height: 70px;
-        width: 70px;
-        float: left;
-    }
-    .dlxx{
-        span{
-            font-size: 17px;
-            margin-top: 5%;
-            margin-left: 7%;
+        width: 100%;
+        height: 20px;
+        margin-bottom: 5px;
+        .green{
+            width: 7px;
+            height: 20px;
             float: left;
-            width: 100%;
-            height: 10%;
+            background-color: rgb(78, 145, 78);
+            margin-right: 10px;
+        }
+        .tg{
+            float: right;
+            margin-right: 3.5%;
+            color: green;
         }
     }
-    .zp>img{
-        height: 35px;
-        width: 25px;
-        margin-top: 15px;
+
+    .sj{
+        width: 93%;
+        margin-right: 3.5%;
+        margin-left: 3.5%;
+        height: 120px;
+        .book{
+            width: 22%;
+            height: 115px;
+            float: left;
+            margin: 1.5%;
+
+            img{
+                width: 100%;
+                height: 90px;
+            }
+            .name{
+                width: 100%;
+                height: 17px;
+                overflow: hidden;
+            }
+        }
     }
-    .zp>span{
-        display: block;
-        position: relative;
-        margin-left: 35px;
-        margin-top:-30px;
+    
+    .hhbd{
+        height:270px;
+        width: 93%;
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+        .chat{
+            height: 90px;
+            border-bottom: 1px solid grey;
+            p{
+                float: left;
+                width: 60%; 
+                ion-icon{
+                    color: gray;
+                    font-size: 20px;
+
+                }
+            }
+            img{
+                height: 70px;
+                width: 70px;
+                float: right;
+                margin-top: 10px;
+            }
+        }
+        
     }
-    #tg{
-        display: block;
-        float: right;
-        margin-top:-19px;
-        color:green;
-    }
+    
+    
     .write{
         img{
             height: 50%;
