@@ -1,4 +1,5 @@
 page-bookstore {
+ion-content{
   .navList{
     .first{
       border-style:opx;
@@ -38,24 +39,26 @@ page-bookstore {
       margin-left: 7.5%;
       }
     }
-  // #end{
-  //   margin-top: 3%;
-  //   img{
-  //     margin-left: 3.5%;
-  //     margin-top: 2%;
-  //   }
-  //   div{
-  //     img{
-  //       width: 20%;
-  //       margin-left: 3.5%;
-  //     }
-  //   }
-  // }
-  .jx{
+  .title{
+    display: block;
     width: 100%;
+    height: 20px;
+    margin-bottom: 5px;
+    .green{
+        width: 7px;
+        height: 20px;
+        float: left;
+        background-color: rgb(78, 145, 78);
+        margin-right: 10px;
+    }
+  }
+  .jx{
+    width: 93%;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
     .book{
       width: 22%;
-      height: 150px;
+      height: 140px;
       float: left;
       margin: 1.5%;
       img{
@@ -79,16 +82,13 @@ page-bookstore {
       }
     }
   }
-  #xian1{
-    width: 30%;
-    height: auto;
-    margin-left: 2%;
-  }
   .jx1{
-    width: 100%;
+    width: 93%;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
     .book{
       width: 28%;
-      height: 150px;
+      height: 140px;
       float: left;
       margin: 2.5%;
       img{
@@ -112,4 +112,5 @@ page-bookstore {
       }
     }
   }
+}
 }

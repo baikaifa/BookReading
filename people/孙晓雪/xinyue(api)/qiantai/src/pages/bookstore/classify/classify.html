@@ -1,0 +1,127 @@
+<!--
+  Generated template for the ClassifyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header text-center no-border>
+  <ion-navbar color="secondary">
+    <ul class="navList">
+      <li (click)="isClick(0)" [class.first]="isActive==0" >男生</li>
+      <li (click)="isClick(1)" [class.first]="isActive==1" >女生</li>
+      <li (click)="isClick(2)" [class.first]="isActive==2" >出版</li>
+      <li (click)="isClick(3)" [class.first]="isActive==3" >漫画</li>
+    </ul>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <div [ngSwitch]="isActive">
+      <!-- 男生 -->
+      <div *ngSwitchCase="0">
+        <div class="tuijian">
+          <span style="color: gray;margin-left: 3%;">根据阅读兴趣推荐</span>
+          <br><br>
+          <button>茅山</button>
+          <button>阵法</button>
+          <button>金手指</button>
+          <button>透视</button>
+          <button>血统</button>
+        </div>
+        <ion-grid class="end">
+          <ion-row>
+            <ion-col col-6 *ngFor="let item of arr1;let idx=index">
+              <div class="big">
+                <div class="detail">
+                  <span class="title">{{arr1[idx].title}}</span>
+                  <img src="{{arr1[idx].src}}" alt="">
+                </div>
+                <span class="text">{{arr1[idx].text}}</span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <!-- 女生 -->
+      <div *ngSwitchCase="1">
+          <div class="tuijian">
+              <span style="color: gray;margin-left: 3%;">根据阅读兴趣推荐</span>
+              <br><br>
+              <button>霸道</button>
+              <button>阴差阳错</button>
+              <button>魔幻</button>
+              <button>阵法</button>
+              <button>逐渐养成</button>
+            </div>
+            <ion-grid class="end">
+              <ion-row>
+                <ion-col col-6 *ngFor="let item of arr2;let idx=index">
+                  <div class="big">
+                    <div class="detail">
+                      <span class="title">{{arr2[idx].title}}</span>
+                      <img src="{{arr2[idx].src}}" alt="">
+                    </div>
+                    <span class="text">{{arr2[idx].text}}</span>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+      </div>
+
+      <!-- 出版 -->
+      <div *ngSwitchCase="2">
+          <div class="tuijian">
+              <span style="color: gray;margin-left: 3%;">根据阅读兴趣推荐</span>
+              <br><br>
+              <button>阴谋</button>
+              <button>盗墓</button>
+              <button>热血</button>
+              <button>经商</button>
+              <button>架空</button>
+              <button>悬空</button>
+            </div>
+            <ion-grid class="end">
+              <ion-row>
+                <ion-col col-6 *ngFor="let item of arr3;let idx=index">
+                  <div class="big">
+                    <div class="detail">
+                      <span class="title">{{arr3[idx].title}}</span>
+                      <img src="{{arr3[idx].src}}" alt="">
+                    </div>
+                    <span class="text">{{arr3[idx].text}}</span>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+      </div>
+      <div *ngSwitchCase="3">
+          <div class="tuijian">
+              <span style="color: gray;margin-left: 3%;">根据阅读兴趣推荐</span>
+              <br><br>
+              <button>异能</button>
+              <button>科幻</button>
+              <button>随身流</button>
+              <button>逆袭</button>
+              <button>重逢</button>
+            </div>
+            <ion-grid class="end">
+              <ion-row>
+                <ion-col col-6 *ngFor="let item of arr4;let idx=index">
+                  <div class="big">
+                    <div class="detail">
+                      <span class="title">{{arr4[idx].title}}</span>
+                      <img src="{{arr4[idx].src}}" alt="">
+                    </div>
+                    <span class="text">{{arr4[idx].text}}</span>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+      </div>
+      </div>
+
+
+
+  </ion-content>
+

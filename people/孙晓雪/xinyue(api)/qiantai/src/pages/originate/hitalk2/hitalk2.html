@@ -1,0 +1,50 @@
+<!--
+  Generated template for the Hitalk2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header text-center no-border>
+
+  <ion-navbar color="secondary">
+    <ion-title>高能Hi聊</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name=""></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="text" style="border-bottom:6px solid darkgrey;width: 100%;">
+    <p class="p">你身边真的有每天只睡三四个小时的人吗？<br><span>358人浏览 158人评论</span></p>
+    <p></p>
+    <p>Hi~ o(*^＠^*)o书友们好！<br>楼主想问问大家，身边有那种精力特别旺盛的朋友吗？<br>因为楼主是每天必睡8小时的人，偶尔熬夜，第二天必定是昏昏沉沉一上午，中午就必须补觉！</p>
+    <img src="../../../assets/imgs/高能Hi聊/4.png" alt="">
+    <p>但是身边有小伙伴是那种，凌晨3点睡，7点就可以就精神满满的出门！</p>
+    <img src="../../../assets/imgs/高能Hi聊/3.png" alt="">
+    <p>大家要不要一起来聊一聊，你的生物钟是怎么样的？</p>
+  </div>
+
+  <div class="title">
+    <div class="green"></div> 热门评论
+  </div>
+
+  <div class="comment">
+    <div class="text" *ngFor="let item of arr1;let idx = index">
+      <div><img src="{{arr1[idx].img}}" ></div>
+      <span class="name">{{arr1[idx].name}}</span><br>
+      <p class="text1">{{arr1[idx].text}}</p>
+      <span class="agree"><ion-icon name="ios-thumbs-up-outline"></ion-icon>{{arr1[idx].agree}}</span>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <span>(*^▽^*)</span>
+  <input type="text" placeholder="我有话说">
+  <button>评论</button>
+</ion-footer>
