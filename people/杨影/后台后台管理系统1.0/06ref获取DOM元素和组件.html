@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://unpkg.com/vue@2.3.3/dist/vue.min.js"></script>
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" ref="mybtn" value="获取元素" @click="getElement" name="" id="">
+        <h3 id="myh3" ref="myh3">哈哈哈,今天天气太好了</h3>
+        <hr>
+        <login ref="mylogin"></login>
+    </div>
+    <script type="text/javascript">
+        var login = {
+            template: '<h1>登录组件</h1>',
+            data(){
+                return {
+                    msg: 'son msg'
+
+                }
+            },
+            methods:{
+                show(){
+                    console.log('调用了子组件的方法');
+                }
+            }
+        }
+        var vm = new Vue({
+            el: '#app',
+            data: {
+              
+            },
+            methods: {
+                show() {
+                    console.log('调用了子组件的方法');
+                },
+                getElement() {
+                    //ref是reference的缩写
+                    console.log(this.$refs);
+                    console.log(this.$refs.myh3);
+                    console.log(this.$refs.myh3.innerText);
+                    console.log(this.$refs.mylogin.msg);
+                }
+            },
+            components: {
+                login
+            }
+        })
+    </script>
+</body>
+
+</html>
