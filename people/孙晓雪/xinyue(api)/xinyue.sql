@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2018-12-18 08:00:08
+Date: 2018-12-18 09:56:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -36,67 +36,73 @@ INSERT INTO `admin_table` VALUES ('1', 'keifer', '123456');
 -- ----------------------------
 DROP TABLE IF EXISTS `bangdan_boys`;
 CREATE TABLE `bangdan_boys` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `img_src` varchar(255) NOT NULL,
   `bang_name` varchar(5) NOT NULL,
-  `shangsheng` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `shangsheng` varchar(25) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bangdan_boys
 -- ----------------------------
-INSERT INTO `bangdan_boys` VALUES ('http://127.0.0.1:3001/bangdan/1.jpg', '综合人气榜', '《一世兵王》上升了五名');
-INSERT INTO `bangdan_boys` VALUES ('http://127.0.0.1:3001/bangdan/2.jpg', '原创月票榜', '阿里原创作品风云角逐');
-INSERT INTO `bangdan_boys` VALUES ('http://127.0.0.1:3001/bangdan/3.jpg', '完结榜', '《盖世帝尊》上升了2名');
-INSERT INTO `bangdan_boys` VALUES ('http://127.0.0.1:3001/bangdan/4.jpg', '新书榜', '《校园修仙》上升了20名');
-INSERT INTO `bangdan_boys` VALUES ('http://127.0.0.1:3001/bangdan/5.jpg', '大神力作榜', '《鬼医神农》上升了3名');
-INSERT INTO `bangdan_boys` VALUES ('http://127.0.0.1:3001/bangdan/6.jpg', '书友推荐榜', '百万书友投票推荐');
-INSERT INTO `bangdan_boys` VALUES ('http://127.0.0.1:3001/bangdan/7.jpg', '包月人气榜', '《刑凶手札》上升了2名');
-INSERT INTO `bangdan_boys` VALUES ('http://127.0.0.1:3001/bangdan/8.jpg', '原创点击榜', '《仙界垃圾场》上升了3名');
-INSERT INTO `bangdan_boys` VALUES ('http://127.0.0.1:3001/bangdan/10.jpg', '书友原创榜', '书友原创热文');
+INSERT INTO `bangdan_boys` VALUES ('1', 'http://127.0.0.1:3001/bangdan/1.jpg', '综合人气榜', '《一世兵王》上升了五名');
+INSERT INTO `bangdan_boys` VALUES ('2', 'http://127.0.0.1:3001/bangdan/2.jpg', '原创月票榜', '阿里原创作品风云角逐');
+INSERT INTO `bangdan_boys` VALUES ('3', 'http://127.0.0.1:3001/bangdan/3.jpg', '完结榜', '《盖世帝尊》上升了2名');
+INSERT INTO `bangdan_boys` VALUES ('4', 'http://127.0.0.1:3001/bangdan/4.jpg', '新书榜', '《校园修仙》上升了20名');
+INSERT INTO `bangdan_boys` VALUES ('5', 'http://127.0.0.1:3001/bangdan/5.jpg', '大神力作榜', '《鬼医神农》上升了3名');
+INSERT INTO `bangdan_boys` VALUES ('6', 'http://127.0.0.1:3001/bangdan/6.jpg', '书友推荐榜', '百万书友投票推荐');
+INSERT INTO `bangdan_boys` VALUES ('7', 'http://127.0.0.1:3001/bangdan/7.jpg', '包月人气榜', '《刑凶手札》上升了2名');
+INSERT INTO `bangdan_boys` VALUES ('8', 'http://127.0.0.1:3001/bangdan/8.jpg', '原创点击榜', '《仙界垃圾场》上升了3名');
+INSERT INTO `bangdan_boys` VALUES ('9', 'http://127.0.0.1:3001/bangdan/10.jpg', '书友原创榜', '书友原创热文');
 
 -- ----------------------------
 -- Table structure for bangdan_chuban
 -- ----------------------------
 DROP TABLE IF EXISTS `bangdan_chuban`;
 CREATE TABLE `bangdan_chuban` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `img_src` varchar(255) NOT NULL,
   `bangdan_name` varchar(255) NOT NULL,
-  `shangsheng` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `shangsheng` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bangdan_chuban
 -- ----------------------------
-INSERT INTO `bangdan_chuban` VALUES ('http://127.0.0.1:3001/bangdan/21.jpg', '畅销榜', '《大约是爱》上升了25名');
-INSERT INTO `bangdan_chuban` VALUES ('http://127.0.0.1:3001/bangdan/22.jpg', '新书榜', '《大约是爱》上升了20名');
-INSERT INTO `bangdan_chuban` VALUES ('http://127.0.0.1:3001/bangdan/23.jpg', '主编推荐榜', '精品推荐');
-INSERT INTO `bangdan_chuban` VALUES ('http://127.0.0.1:3001/bangdan/24.jpg', '书友推荐榜', '百万书友投票推荐');
-INSERT INTO `bangdan_chuban` VALUES ('http://127.0.0.1:3001/bangdan/5.jpg', '包月榜', '包月榜');
-INSERT INTO `bangdan_chuban` VALUES ('http://127.0.0.1:3001/bangdan/26.jpg', '热卖榜', '热卖榜');
+INSERT INTO `bangdan_chuban` VALUES ('1', 'http://127.0.0.1:3001/bangdan/21.jpg', '畅销榜', '《大约是爱》上升了25名');
+INSERT INTO `bangdan_chuban` VALUES ('2', 'http://127.0.0.1:3001/bangdan/22.jpg', '新书榜', '《大约是爱》上升了20名');
+INSERT INTO `bangdan_chuban` VALUES ('3', 'http://127.0.0.1:3001/bangdan/23.jpg', '主编推荐榜', '精品推荐');
+INSERT INTO `bangdan_chuban` VALUES ('4', 'http://127.0.0.1:3001/bangdan/24.jpg', '书友推荐榜', '百万书友投票推荐');
+INSERT INTO `bangdan_chuban` VALUES ('5', 'http://127.0.0.1:3001/bangdan/5.jpg', '包月榜', '包月榜');
+INSERT INTO `bangdan_chuban` VALUES ('6', 'http://127.0.0.1:3001/bangdan/26.jpg', '热卖榜', '热卖榜');
 
 -- ----------------------------
 -- Table structure for bangdan_girls
 -- ----------------------------
 DROP TABLE IF EXISTS `bangdan_girls`;
 CREATE TABLE `bangdan_girls` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `img_src` varchar(255) NOT NULL,
   `bangdan_name` varchar(255) NOT NULL,
-  `shangsheng` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `shangsheng` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bangdan_girls
 -- ----------------------------
-INSERT INTO `bangdan_girls` VALUES ('http://127.0.0.1:3001/bangdan/11.jpg', '综合人气榜', '《后娘[穿越]》上升了14名');
-INSERT INTO `bangdan_girls` VALUES ('http://127.0.0.1:3001/bangdan/12.jpg', '原创月票榜', '阿里原创作品风云角逐');
-INSERT INTO `bangdan_girls` VALUES ('http://127.0.0.1:3001/bangdan/13.jpg', '完结榜', '《骗婚总裁》上升了27名');
-INSERT INTO `bangdan_girls` VALUES ('http://127.0.0.1:3001/bangdan/14.jpg', '新书榜', '《毒妃来袭》上升了5名');
-INSERT INTO `bangdan_girls` VALUES ('http://127.0.0.1:3001/bangdan/15.jpg', '大神力作榜', '《盛世宠妃》上升了3名');
-INSERT INTO `bangdan_girls` VALUES ('http://127.0.0.1:3001/bangdan/16.jpg', '书友推荐榜', '百万书友投票推荐');
-INSERT INTO `bangdan_girls` VALUES ('http://127.0.0.1:3001/bangdan/17.jpg', '包月人气榜', '《总裁大人轻点》上升了4名');
-INSERT INTO `bangdan_girls` VALUES ('http://127.0.0.1:3001/bangdan/18.jpg', '原创点击榜', '《盛世娇医》上升了25名');
-INSERT INTO `bangdan_girls` VALUES ('http://127.0.0.1:3001/bangdan/19.jpg', '原创订阅榜', '《农家小寡妇》上升了25名');
-INSERT INTO `bangdan_girls` VALUES ('http://127.0.0.1:3001/bangdan/20.jpg', '书友推荐榜', '书友原创热文');
+INSERT INTO `bangdan_girls` VALUES ('1', 'http://127.0.0.1:3001/bangdan/11.jpg', '综合人气榜', '《后娘[穿越]》上升了14名');
+INSERT INTO `bangdan_girls` VALUES ('2', 'http://127.0.0.1:3001/bangdan/12.jpg', '原创月票榜', '阿里原创作品风云角逐');
+INSERT INTO `bangdan_girls` VALUES ('3', 'http://127.0.0.1:3001/bangdan/13.jpg', '完结榜', '《骗婚总裁》上升了27名');
+INSERT INTO `bangdan_girls` VALUES ('4', 'http://127.0.0.1:3001/bangdan/14.jpg', '新书榜', '《毒妃来袭》上升了5名');
+INSERT INTO `bangdan_girls` VALUES ('5', 'http://127.0.0.1:3001/bangdan/15.jpg', '大神力作榜', '《盛世宠妃》上升了3名');
+INSERT INTO `bangdan_girls` VALUES ('6', 'http://127.0.0.1:3001/bangdan/16.jpg', '书友推荐榜', '百万书友投票推荐');
+INSERT INTO `bangdan_girls` VALUES ('7', 'http://127.0.0.1:3001/bangdan/17.jpg', '包月人气榜', '《总裁大人轻点》上升了4名');
+INSERT INTO `bangdan_girls` VALUES ('8', 'http://127.0.0.1:3001/bangdan/18.jpg', '原创点击榜', '《盛世娇医》上升了25名');
+INSERT INTO `bangdan_girls` VALUES ('9', 'http://127.0.0.1:3001/bangdan/19.jpg', '原创订阅榜', '《农家小寡妇》上升了25名');
+INSERT INTO `bangdan_girls` VALUES ('10', 'http://127.0.0.1:3001/bangdan/20.jpg', '书友推荐榜', '书友原创热文');
 
 -- ----------------------------
 -- Table structure for books_carousel_table
@@ -496,6 +502,21 @@ INSERT INTO `hichat_table` VALUES ('2', '你身边真的有人睡三四个小时
 INSERT INTO `hichat_table` VALUES ('3', '00后黑话宝典，你知道多少？', 'http://127.0.0.1:3001/hichat/3.png', '1693', '268');
 
 -- ----------------------------
+-- Table structure for opinion_table
+-- ----------------------------
+DROP TABLE IF EXISTS `opinion_table`;
+CREATE TABLE `opinion_table` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) DEFAULT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of opinion_table
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for original_carousel_table
 -- ----------------------------
 DROP TABLE IF EXISTS `original_carousel_table`;
@@ -581,6 +602,20 @@ CREATE TABLE `resources` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for search_table
+-- ----------------------------
+DROP TABLE IF EXISTS `search_table`;
+CREATE TABLE `search_table` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `text` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of search_table
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for shujia_table
 -- ----------------------------
 DROP TABLE IF EXISTS `shujia_table`;
@@ -601,6 +636,19 @@ INSERT INTO `shujia_table` VALUES ('3', 'http://127.0.0.1:3001/bookjia/boy1.png'
 INSERT INTO `shujia_table` VALUES ('4', 'http://127.0.0.1:3001/bookjia/boy2.png', '57', '23');
 INSERT INTO `shujia_table` VALUES ('5', 'http://127.0.0.1:3001/bookjia/nv3.png', '32', '99');
 INSERT INTO `shujia_table` VALUES ('6', 'http://127.0.0.1:3001/bookjia/nv4.png', '79', '45');
+
+-- ----------------------------
+-- Table structure for sign_table
+-- ----------------------------
+DROP TABLE IF EXISTS `sign_table`;
+CREATE TABLE `sign_table` (
+  `signed` int(11) DEFAULT NULL,
+  `cansign` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sign_table
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for user_table
@@ -685,3 +733,18 @@ INSERT INTO `wanjie_table` VALUES ('5', 'http://127.0.0.1:3001/wanjie/5.png', '�
 INSERT INTO `wanjie_table` VALUES ('6', 'http://127.0.0.1:3001/wanjie/6.png', '不死魂女', '千煦的城');
 INSERT INTO `wanjie_table` VALUES ('7', 'http://127.0.0.1:3001/wanjie/7.png', '妻约已过', '琪璇');
 INSERT INTO `wanjie_table` VALUES ('8', 'http://127.0.0.1:3001/wanjie/8.png', '医女狂妃', '雪月夜');
+
+-- ----------------------------
+-- Table structure for write_name
+-- ----------------------------
+DROP TABLE IF EXISTS `write_name`;
+CREATE TABLE `write_name` (
+  `ID` int(11) NOT NULL,
+  `name` varchar(25) DEFAULT NULL,
+  `detail` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of write_name
+-- ----------------------------
