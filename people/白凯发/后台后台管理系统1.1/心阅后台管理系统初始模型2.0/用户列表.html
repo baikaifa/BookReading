@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>欢迎页面-X-admin2.0</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/font.css">
+  <link rel="stylesheet" href="./css/xadmin.css">
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./js/xadmin.js"></script>
+  <script src="https://unpkg.com/vue@2.3.3/dist/vue.min.js"></script>
+  <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+  <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!--上边不用管-->
+
+<!--右侧主体开始-->
+
+<body class="layui-anim layui-anim-up">
+  <div id="app">
+    <!--顶部路径显示-->
+    <div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">用户管理</a>
+        <a>
+          <cite>用户列表</cite></a>
+      </span>
+      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+        title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+    </div>
+
+    <!--内容部分-->
+    <div class="x-body">
+
+      <!--日期选择及搜索框-->
+      <div class="layui-row">
+        <form class="layui-form layui-col-md12 x-so">
+          <input class="layui-input" placeholder="开始日" name="start" id="start">
+          <input class="layui-input" placeholder="截止日" name="end" id="end">
+          <input type="text" name="username" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+          <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+        </form>
+      </div>
+
+      <!--两个button-->
+      <xblock>
+        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+        <button class="layui-btn" onclick="x_admin_show('添加用户','./用户列表-添加.html',600,400)"><i class="layui-icon"></i>添加</button>
+        <span class="x-right" style="line-height:40px">共有数据：{{number}}条</span>
+      </xblock>
+
+      <!--三行表格，其中一行表头两行内容-->
+      <table class="layui-table">
+        <thead>
+          <tr>
+            <th>
+              <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+            </th>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>性别</th>
+            <th>手机</th>
+            <th>是否VIP</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <!-- 
+             <br>
+    <hr>
+    <ul v-for="(user,i) in list" v-cloak>
+      <li>{{user}}</li>
+    </ul>
+         -->
+        <tbody>
+          <tr v-for="(user,i) in list" v-cloak>
+            <td>
+              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+            </td>
+            <td id="stateId" ref="myId">{{user.ID}}</td>
+            <td>{{user.tel}}</td>
+            <td>{{user.gender}} </td>
+            <td>{{user.tel}}</td>
+            <td v-if="user.vip">是</td>
+            <td v-if="!user.vip">否</td>
+            <td class="td-status">
+              <span class="layui-btn layui-btn-normal layui-btn-mini" id="stateState">{{user.state}}</span>
+            </td>
+            <td class="td-manage">
+              <a @click="member_stop(this,i,user)" href="javascript:;" title="启用">
+                <i class="layui-icon">&#xe601;</i>
+              </a>
+              <a title="编辑" onclick="x_admin_show('编辑','用户列表-编辑.html',600,400)" href="javascript:;">
+                <i class="layui-icon">&#xe642;</i>
+              </a>
+              <!-- <a onclick="x_admin_show('修改密码','用户列表-修改密码.html',600,400)" title="修改密码" href="javascript:;">
+                <i class="layui-icon">&#xe631;</i>
+              </a> -->
+              <a title="删除" @click="member_del(this,i)" href="javascript:;">
+                <i class="layui-icon">&#xe640;</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--三行表格结束-->
+
+      <!--表格下的页面切换样式，只有样式，没有功能-->
+      <div class="page">
+        <div>
+          <a class="prev" href="">&lt;&lt;</a>
+          <a class="num" href="">1</a>
+          <span class="current">2</span>
+          <a class="num" href="">3</a>
+          <a class="num" href="">489</a>
+          <a class="next" href="">&gt;&gt;</a>
+        </div>
+      </div>
+    </div>
+    <!--右侧主体结束-->
+    <!--具体实现表格右端四个按钮的功能-->
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        list: [],
+        number:'',
+      },
+      methods: {
+        //查询有多少条数据
+        query_number(){
+          $.get("http://127.0.0.1:8888/query_number", (data, status) => {
+            console.log(data);
+            this.number = data;
+          });
+        },
+                /*用户-停用*/
+                member_stop(obj,i,user) {
+          var that = this;
+          layer.confirm('确认要停用吗？', function (index) {
+            if ($(obj).attr('title') == '启用') {
+              //发异步把用户状态进行更改
+              layer.msg('已停用!', {
+                icon: 5,
+                time: 1000
+              });
+              $.post("http://127.0.0.1:8888/yiqiyong", { //jq的post方法
+                    id: that.$refs.myId[i].textContent,
+                    state:user.state
+                }, function (res) {
+                  window.location.href = "用户列表.html"
+                })
+            } else {
+              $.post("http://127.0.0.1:8888/yiqiyong", { //jq的post方法
+                    id: that.$refs.myId[i].textContent,
+                    state:user.state
+                }, function (res) {
+                  window.location.href = "用户列表.html"
+                })
+              layer.msg('已启用!', {
+                icon: 5,
+                time: 1000
+              });
+            }
+          });
+        },
+        getPerson() {
+          $.get("http://127.0.0.1:8888/user_get", (data, status) => {
+            console.log(data);
+            this.list = data;
+          });
+        },
+        /*用户-删除*/
+        member_del(obj, i) {
+          var that = this;
+          console.log(this);
+          layer.confirm('确认要删除吗？', function (index) {
+            console.log(this);
+            //发异步删除数据
+            $(obj).parents("tr").remove();
+            layer.msg('已删除!', {
+              icon: 1,
+              time: 1000
+            });
+            console.log(i);
+            console.log(that.$refs);
+            console.log(that.$refs.myId);
+            console.log(that.$refs.myId[i]);
+            console.log(that.$refs.myId[i].textContent);
+            $.post("http://127.0.0.1:8888/del_member", { //jq的post方法
+              id: that.$refs.myId[i].textContent
+            }, function (res) {
+              window.location.href = "用户列表.html"
+              alert("删除成功");
+            })
+          });
+        },
+      },
+
+      beforeCreate: function () {
+        console.log('1-beforeCreate 初始化之后');
+      },
+      created: function () {
+        this.getPerson();
+        this.query_number();
+        console.log('2-created 创建完成');
+      },
+      beforeMount: function () {
+        console.log('3-beforeMount 挂载之前');
+      },
+      mounted: function () {
+        console.log('4-mounted 被创建');
+      },
+      beforeUpdate: function () {
+        console.log('5-beforeUpdate 数据更新前');
+      },
+      updated: function () {
+        console.log('6-updated 被更新后');
+      },
+      activated: function () {
+        console.log('7-activated');
+      },
+      deactivated: function () {
+        console.log('8-deactivated');
+      },
+      beforeDestroy: function () {
+        console.log('9-beforeDestroy 销毁之前');
+      },
+      destroyed: function () {
+        console.log('10-destroyed 销毁之后')
+      }
+    }) //Vue的内容
+
+    layui.use('laydate', function () {
+      var laydate = layui.laydate;
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#start' //指定元素
+      });
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#end' //指定元素
+      });
+    });
+    function delAll(argument) {
+
+      var data = tableCheck.getData();
+
+      layer.confirm('确认要删除吗？' + data, function (index) {
+        //捉到所有被选中的，发异步进行删除
+        layer.msg('删除成功', {
+          icon: 1
+        });
+        $(".layui-form-checked").not('.header').parents('tr').remove();
+      });
+    }
+  </script>
+
+</body>
+
+</html>
