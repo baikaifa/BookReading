@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.0</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.21/vue.common.dev.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+  <body>
+    <div id="app">
+    <div class="x-nav" >
+    
+      <!--顶部路径显示-->
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">图书管理</a>
+        <a>
+          <cite>图书列表</cite></a>
+      </span>
+
+      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+    </div>
+
+    <!--内容部分-->
+    <div class="x-body">
+
+      <!--日期选择、下拉选择框、搜索框-->
+      <div class="layui-row">
+        <form class="layui-form layui-col-md12 x-so">
+          <input class="layui-input" placeholder="开始日" name="start" id="start">
+          <input class="layui-input" placeholder="截止日" name="end" id="end">
+          <div class="layui-input-inline">
+            <select name="contrller">
+              <option>图书状态</option>
+              <option>已完结</option>
+              <option>正在更新</option>
+            </select>
+          </div>
+          <div class="layui-input-inline">
+            <select name="contrller">
+              <option>图书渠道</option>
+              <option>心阅版权</option>
+              <option>个人原创</option>
+              <option>第三方购买</option>
+            </select>
+          </div>
+          <div class="layui-input-inline">
+            <select name="contrller">
+              <option value="">图书类别</option>
+              <option value="0">玄幻</option>
+              <option value="1">科幻</option>
+              <option value="2">都市</option>
+              <option value="3">穿越</option>
+              <option value="4">言情</option>
+              <option value="5">校园</option>
+            </select>
+          </div>
+          <input type="text" name="username"  placeholder="请输入图书名称" autocomplete="off" class="layui-input">
+          <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+        </form>
+      </div>
+      <!--日期选择、下拉选择框、搜索框 结束-->
+
+      <!--两个按钮-->
+      <xblock>
+        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+        <button class="layui-btn" onclick="x_admin_show('添加用户','./图书列表-添加.html')"><i class="layui-icon"></i>添加</button>
+        <span class="x-right" style="line-height:40px">共有数据：28 条</span>
+      </xblock>
+
+      <!--两行表格-->
+      <table class="layui-table">
+        <thead>
+          <tr>
+            <th>
+              <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+            </th>
+            <th>ID</th>
+            <th>图书标题</th>
+            <th>作者</th>
+            <th>订阅量</th>
+            <th>阅读量</th>
+            <th>图书状态</th>
+            <th>图书渠道</th>
+            <th>图书类别</th>
+            <th>开始连载</th>
+            <th>完结时间</th>
+            <th >操作</th>
+            </tr>
+        </thead>
+
+        <tbody>
+          <tr v-for="(book,i) in list" v-cloak>
+            <td>
+              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+            </td>
+            <!-- <td><img src="{{book.pic_src}}" style="width:100px;height: 120px;"></td> -->
+            <td id="stateId"  ref="myId">{{book.ID}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.subscribe}}</td>
+            <td>{{book.read}}</td>
+            <td>{{book.state}}</td>
+            <td>{{book.qudao}}</td>
+            <td>{{book.type}}</td>
+            <td>{{book.begin}}</td>
+            <td>{{book.over}}</td>
+
+            <!--表格右端的两个操作按钮-->
+            <td class="td-manage">
+              <a title="查看"  onclick="x_admin_show('编辑','图书列表-添加.html')" href="javascript:;">
+                <!--这里的查看功能本就是跳转到一个虚无的界面，┐(ﾟ～ﾟ)┌，我改成了跳到图书添加页面-->
+                <i class="layui-icon">&#xe63c;</i>
+              </a>
+              <a title="删除" @click="book_del(this,i)" href="javascript:;">
+                <i class="layui-icon">&#xe640;</i>
+                <!--&#xe640是阿里图标库里图标对应的代码，直接引入图标-->
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--表格下的页面切换样式，只有样式，没有功能-->
+      <div class="page">
+        <div>
+          <a class="prev" href="">&lt;&lt;</a>
+          <a class="num" href="">1</a>
+          <span class="current">2</span>
+          <a class="num" href="">…</a>
+          <a class="num" href="">273</a>
+          <a class="next" href="">&gt;&gt;</a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!--为批量操作、添加、以及列表右端按钮添加互动效果-->
+    <script>
+        var vm = new Vue({
+          el: "#app",
+          data: {
+            list: [],
+          },
+          methods: {
+            getPerson() {
+              $.get("http://127.0.0.1:8888/books_get", (data, status) => {
+                console.log(data);
+                this.list = data;
+              });
+            },
+            /*图书-删除*/
+            book_del(obj, i) {
+              var that=this;
+              console.log(this);
+              layer.confirm('确认要删除吗？', function (index) {
+                console.log(this);
+                //发异步删除数据
+                $(obj).parents("tr").remove();
+                layer.msg('已删除!', {
+                  icon: 1,
+                  time: 1000
+                });
+                console.log(i);
+                console.log(that.$refs);
+                console.log(that.$refs.myId);
+                console.log(that.$refs.myId[i]);
+            console.log(that.$refs.myId[i].textContent);
+                $.post("http://127.0.0.1:8888/del_book", { //jq的post方法
+                  id: that.$refs.myId[i].textContent
+                }, function (res) {
+                  window.location.href="图书列表.html"
+                  alert("删除成功");
+                })
+              });
+            }
+    
+          },
+          beforeCreate: function () {
+            console.log('1-beforeCreate 初始化之后');
+          },
+          created: function () {
+            this.getPerson();
+            console.log('2-created 创建完成');
+          },
+          beforeMount: function () {
+            console.log('3-beforeMount 挂载之前');
+          },
+          mounted: function () {
+            console.log('4-mounted 被创建');
+          },
+          beforeUpdate: function () {
+            console.log('5-beforeUpdate 数据更新前');
+          },
+          updated: function () {
+            console.log('6-updated 被更新后');
+          },
+          activated: function () {
+            console.log('7-activated');
+          },
+          deactivated: function () {
+            console.log('8-deactivated');
+          },
+          beforeDestroy: function () {
+            console.log('9-beforeDestroy 销毁之前');
+          },
+          destroyed: function () {
+            console.log('10-destroyed 销毁之后')
+          }
+        }) //Vue的内容
+    
+        layui.use('laydate', function () {
+          var laydate = layui.laydate;
+    
+          //执行一个laydate实例
+          laydate.render({
+            elem: '#start' //指定元素
+          });
+    
+          //执行一个laydate实例
+          laydate.render({
+            elem: '#end' //指定元素
+          });
+        });
+    
+        
+
+    
+    
+    
+        function delAll(argument) {
+    
+          var data = tableCheck.getData();
+    
+          layer.confirm('确认要删除吗？' + data, function (index) {
+            //捉到所有被选中的，发异步进行删除
+            layer.msg('删除成功', {
+              icon: 1
+            });
+            $(".layui-form-checked").not('.header').parents('tr').remove();
+          });
+        }
+      </script>
+  </body>
+
+</html>
