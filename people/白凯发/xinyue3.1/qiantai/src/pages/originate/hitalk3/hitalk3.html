@@ -1,0 +1,48 @@
+<!--
+  Generated template for the Hitalk3Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header text-center no-border>
+
+  <ion-navbar color="secondary">
+    <ion-title>高能Hi聊</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name=""></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div class="text" style="border-bottom:6px solid darkgrey;width: 100%;">
+    <p class="p">00后黑话宝典，你知道多少？<br><span>9455人浏览</span></p>
+    <p></p>
+    <p>Hi~ o(*^＠^*)o书友们好！<br>00后黑话宝典，你知道多少？<br>楼主最近在网上看见这个！简直一脸茫然！</p>
+    <img src="../../../assets/imgs/高能Hi聊/hhbd.png">
+    <p>如果是你，能了解多少呢？一起来聊一聊吧！</p>
+  </div>
+
+  <div class="title">
+    <div class="green"></div> 热门评论
+  </div>
+
+  <div class="comment">
+    <div class="text" *ngFor="let item of arr1;let idx = index">
+      <div><img src="{{arr1[idx].img}}" ></div>
+      <span class="name">{{arr1[idx].name}}</span><br>
+      <p class="text1">{{arr1[idx].text}}</p>
+      <span class="agree"><ion-icon name="ios-thumbs-up-outline"></ion-icon>{{arr1[idx].agree}}</span>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <span>(*^▽^*)</span>
+  <input type="text" placeholder="我有话说">
+  <button>评论</button>
+</ion-footer>
