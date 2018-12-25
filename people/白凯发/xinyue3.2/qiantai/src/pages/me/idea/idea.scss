@@ -1,0 +1,41 @@
+page-idea {
+    ion-content{
+        background-color: #ececec!important;
+        background-size: cover;
+        .hot{
+            text-align: center;
+            background-color: #fff;
+            .rm{
+                height: 174px;
+                padding-top: 70px;
+            }
+        }
+        .help{
+            margin-top: 10px;
+            text-align: center;
+            background-color: #fff;
+            .gl{
+                height: 145px;
+                padding-top: 55px;
+            }
+        }
+        .dou{
+            margin-top: 10px;
+            text-align: center;
+            background-color: #fff;
+            .dq{
+                height: 97px;
+                padding-top: 25px;
+            }
+        }
+        .people{
+            margin-top: 10px;
+            text-align: center;
+            background-color: #fff;
+            .ren{
+                height: 97px;
+                padding-top: 25px;
+            }
+        }
+    }
+}

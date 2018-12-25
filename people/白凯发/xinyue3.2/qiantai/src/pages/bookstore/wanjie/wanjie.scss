@@ -1,0 +1,101 @@
+page-wanjie {
+  ion-content{
+    .rotation{
+      height: 20%;
+      width: 100%;
+      margin-top:-4% ;
+      img{
+        width: 100%;
+      }
+    }
+    .title{
+      display: block;
+      width: 100%;
+      height: 30px;
+      .green{
+          width: 7px;
+          height: 20px;
+          float: left;
+          background-color: rgb(78, 145, 78);
+          margin-right: 10px;
+      }
+    }
+    #end{
+      .jx{
+        width: 93%;
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+        .book{
+          width: 22%;
+          height: 140px;
+          float: left;
+          margin: 1.5%;
+          img{
+            width: 100%;
+            height: 100px;
+          }
+          div{
+            width: 95%;
+            margin-left: 2%;
+            overflow: hidden;
+          }
+          .black{
+            color: black;
+            font-size:14px;
+            height: 17px;
+          }
+          .gray{
+            color: gray;
+            font-size: 12px;
+            height: 15px;
+          }
+        }
+      }
+    }
+    ion-grid{
+      border-top: 10px solid #ececec;
+      width: 100%;
+      padding-left: 0!important;
+      img{
+        width: 100;
+        height: 100px;
+      }
+      .name{
+        color: black;
+        font-size:14px;
+        height: 17px;
+      }
+      .author{
+        color:gray;
+        font-size: 12px;
+        height: 15px;
+      }
+      .list{
+        padding: 0 10px;
+        ion-col{
+          border-bottom: 1px solid darkgrey;
+          .p1{
+            margin-top: 10px;
+            font-size: 18px;
+            span{
+              font-size: 1em;
+              float: right;
+              margin-right: 5px;
+              button{
+                background-color: white;
+                margin-right: 5px;
+              }
+            }
+          }
+          .p2{
+            color: grey;
+            height: 17px;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
