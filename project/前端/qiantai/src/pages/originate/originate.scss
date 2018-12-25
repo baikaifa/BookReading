@@ -1,0 +1,112 @@
+page-originate {
+ion-content{
+    .navList{
+        margin-top:3px;
+        height: 40px;
+        border-bottom: 1px solid #ececec;
+        button{
+            width: 100%; 
+            height: 35px;     
+            li{
+            height: 35px;
+            line-height: 35px;
+            float: left;
+            width: 50%;
+            text-align: center;
+            list-style: none;
+            margin-left: -15px;
+            font-size: 16px;
+            }
+            .first{
+                background-color: none;
+                color:green;
+            }
+        }
+
+    }
+    #lbt{
+        display: block;
+        position: relative;
+        top:-10px;
+    }
+    .title{
+        display: block;
+        width: 100%;
+        height: 20px;
+        margin-bottom: 5px;
+        .green{
+            width: 7px;
+            height: 20px;
+            float: left;
+            background-color: rgb(78, 145, 78);
+            margin-right: 10px;
+        }
+        .tg{
+            float: right;
+            margin-right: 3.5%;
+            color: green;
+        }
+    }
+
+    .sj{
+        width: 93%;
+        margin-right: 3.5%;
+        margin-left: 3.5%;
+        height: 120px;
+        .book{
+            width: 22%;
+            height: 115px;
+            float: left;
+            margin: 1.5%;
+
+            img{
+                width: 100%;
+                height: 90px;
+            }
+            .name{
+                width: 100%;
+                height: 17px;
+                overflow: hidden;
+            }
+        }
+    }
+    
+    .hhbd{
+        height:270px;
+        width: 93%;
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+        .chat{
+            height: 90px;
+            border-bottom: 1px solid grey;
+            p{
+                float: left;
+                width: 60%; 
+                ion-icon{
+                    color: gray;
+                    font-size: 20px;
+
+                }
+            }
+            img{
+                height: 70px;
+                width: 70px;
+                float: right;
+                margin-top: 10px;
+            }
+        }
+        
+    }
+    
+    
+    .write{
+        img{
+            height: 50%;
+            width: 28%;
+            float: left;
+            margin-left: 5%;
+            margin-top:3%;
+        }
+    }
+}
+}

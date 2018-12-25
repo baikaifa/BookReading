@@ -1,0 +1,66 @@
+<ion-content >
+  <div class="navList">
+    <ul>
+      <button style="background-color:white;text-align:center;">
+        <li *ngFor='let item of arr; let idx=index;' (click)="isClick(idx)" 
+      [class.first]="isActive==idx">{{arr[idx]}}</li></button>
+    </ul>
+    <div [ngSwitch]="isActive">
+      <div *ngSwitchCase="0">
+        <div id="lbt">
+          <ion-slides  loop=true autoplay="2000" *ngIf="arr2.length>0">
+            <ion-slide *ngFor="let item of arr2;let idx = index">
+              <img src="{{arr2[idx].src}}">
+            </ion-slide>
+            <!-- <ion-slide>
+              <img src="../../assets/imgs/轮播图/2.png">
+            </ion-slide>
+            <ion-slide>
+              <img src="../../assets/imgs/轮播图/3.png">
+            </ion-slide>
+            <ion-slide>
+              <img src="../../assets/imgs/轮播图/4.png">
+            </ion-slide> -->
+          </ion-slides>
+        </div>
+
+        <div class="title">
+          <div class="green"></div> 原创推荐
+        </div>
+        <div class="sj">
+          <div class="book" *ngFor="let item of arr1; let idx=index;">
+            <img src="{{arr1[idx].pic_src}}" (click)="goRead()">
+            <div class="name">{{arr1[idx].book_name}}</div>
+          </div>
+        </div>
+
+        <div class="title">
+          <div class="green"></div> 高能Hi聊
+        </div>
+        <div class="hhbd" >
+          <div [navPush]="pagesArr[idx]" class="chat" *ngFor="let item of arr3;let idx = index" >
+            <p>{{arr3[idx].text}}<br><br>
+            <ion-icon name="ios-thumbs-up-outline"></ion-icon>  {{arr3[idx].read}}
+            <ion-icon name="ios-chatboxes-outline"></ion-icon>  {{arr3[idx].talk}}</p>
+            <img src="{{arr3[idx].pic_src}}">
+          </div>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="1">
+        <div class="zp">
+            <div class="title">
+              <div class="green"></div> 我的作品
+              <span class="tg">我要投稿</span>
+            </div>
+        </div>
+        <div class="write">
+          <img src="../../assets/imgs/原创/add.png">
+          <img src="../../assets/imgs/原创/fuben.png">
+          <img src="../../assets/imgs/原创/不住院的凉生.png" (click)="goLS()">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>

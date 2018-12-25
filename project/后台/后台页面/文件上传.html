@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>欢迎页面-X-admin2.0</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/font.css">
+  <link rel="stylesheet" href="./css/xadmin.css">
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./js/xadmin.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.5.21/vue.common.dev.js"></script>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+  <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+    .a-upload {
+
+padding: 4px 10px;
+
+width: 200px;
+
+  height: 30px;
+
+  box-sizing: border-box;
+
+line-height: 20px;
+
+position: relative;
+
+cursor: pointer;
+
+color: #888;
+
+background: #fafafa;
+
+border: 1px solid #ddd;
+
+border-radius: 4px;
+
+overflow: hidden;
+
+display: inline-block;
+
+*display: inline;
+
+*zoom: 1;
+
+top: 5px;
+
+}
+
+
+
+.a-upload  input {
+
+position: absolute;
+
+font-size: 100px;
+
+opacity: 0;
+
+filter: alpha(opacity=0);
+
+cursor: pointer;
+
+ width: 200px;
+
+  height: 30px;
+
+  left: 0;
+
+  top: 0;
+
+}
+
+
+
+.a-upload:hover {
+
+color: #444;
+
+background: #eee;
+
+border-color: #ccc;
+
+text-decoration: none
+
+}</style>
+</head>
+
+<body >
+  <div id="app">
+    <div class="x-nav">
+
+      <!--顶部路径显示-->
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">文件管理</a>
+        <a>
+          <cite>文件上传</cite></a>
+      </span>
+
+      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+        title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+    </div>
+
+    <!--内容部分-->
+    <div class="x-body" >
+
+      <form action="http://localhost:8888/api/upload_file" class="input-large" method="post" enctype="multipart/form-data">
+        <ul style="text-align:center;margin-top: 25%">
+          <li> <a href="#" class="a-upload"><input type="file" name="file" id="file">点击这里上传文件</a></li>
+          <li style="margin-top:1rem;"> <input type="submit" class="btn btn-default"  value="上传"></li>
+        </ul>
+       
+       
+      </form>
+      <script>
+
+      </script>
+</body>
+
+</html>
