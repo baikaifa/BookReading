@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ChubanPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header text-center no-border>
+
+  <ion-navbar color="secondary">
+    <ion-title>出版</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name=""></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="rotation">
+      <ion-slides  loop=true autoplay="2000" *ngIf ="arr1.length>0">
+        <ion-slide *ngFor="let item of arr1;let idx=index">
+          <img src="{{arr1[idx].src}}"  >
+        </ion-slide>
+      </ion-slides>
+    </div>
+    
+    <div id="end">
+      <div *ngFor="let item of arr2;let idx=index" class="jx">
+        <div class="book" >
+          <img src={{arr2[idx].src}} ><br>
+          <div class="black">{{arr2[idx].name}}</div>
+          <div class="gray">{{arr2[idx].author}}</div>
+        </div>
+      </div>
+    </div>
+    <ion-grid>
+      <div class="title">
+        <div class="green"></div>生活励志
+      </div>
+      <ion-row class="list">
+        <ion-col col-12>
+          <img src="../../../assets/imgs/chuban/1.png" alt="">
+          <p>别着急，反正一切来不及</p>
+          <div class="detail">金小安 著 谈朔 图<br><br>本书是专栏作家金小安的女性励志书。作品中，作者记录了生活中的小细节和小感动……</div>
+          <button class="lv">完结</button><button>等待</button><button>着急</button>
+        </ion-col>
+        <ion-col col-12>
+          <img src="../../../assets/imgs/chuban/2.png" alt="">
+          <p>极简思维：颠覆传统思维模式…</p>
+          <div class="detail">(美)S.J.斯科特 巴里.达文波特 著 高晓雪 译<br><br>信息化的社会虽然给人们带来了不少的便利，但随之而来的心理问题和……</div>
+          <button class="lv">完结</button><button>传统</button><button>思维</button>
+        </ion-col>
+        <ion-col col-12>
+          <img src="../../../assets/imgs/chuban/3.png" alt="">
+          <p>所谓世间.那就是你</p>
+          <div class="detail">(日)太宰治 等著 钟小源 译<br><br>每个人都是生而孤独的，如何在茫茫人世的缘起缘灭中觅得一份属于自己的……</div>
+          <button class="lv">完结</button><button>励志</button><button>感悟</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>
