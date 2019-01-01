@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2018-12-25 16:36:17
+Date: 2019-01-01 09:52:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -127,30 +127,23 @@ INSERT INTO `books_carousel_table` VALUES ('3', 'http://127.0.0.1:3001/carousel/
 DROP TABLE IF EXISTS `books_table`;
 CREATE TABLE `books_table` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `pic_src` varchar(255) DEFAULT NULL,
+  `pic_src` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `author` varchar(255) NOT NULL,
-  `subscribe` int(11) DEFAULT NULL,
-  `read` int(11) DEFAULT NULL,
-  `state` varchar(5) DEFAULT NULL,
-  `qudao` varchar(10) DEFAULT NULL,
-  `type` varchar(10) DEFAULT NULL,
-  `begin` varchar(25) DEFAULT NULL,
-  `over` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of books_table
 -- ----------------------------
-INSERT INTO `books_table` VALUES ('1', 'http://127.0.0.1:3001/bookcheng/1.png', '武逆', '只是小虾米', '7100', '8746', '已完结', '心阅版权', '动作', '2017-08-17', '2018-12-16');
-INSERT INTO `books_table` VALUES ('2', 'http://127.0.0.1:3001/bookcheng/2.png', '013号凶案', '月半墙', '4677', '5288', '正在更新', '心阅版权', '悬疑', '2016-04-12', '2018-12-11');
-INSERT INTO `books_table` VALUES ('3', 'http://127.0.0.1:3001/bookcheng/3.png', '风水师的诅咒', '三两二钱', '3574', '5736', '正在更新', '个人原创', '惊悚', '2017-03-04', '2018-12-22');
-INSERT INTO `books_table` VALUES ('4', 'http://127.0.0.1:3001/bookcheng/4.png', '娇软小媳妇', '东方玉如意', '17845', '24578', '已完结', '心悦版权', '言情', '2018-03-08', '2018-12-18');
-INSERT INTO `books_table` VALUES ('5', 'http://127.0.0.1:3001/bookcheng/5.png', '闪婚霸爱', '我是木木', '2489', '3554', '已完结', '个人原创', '言情', '2018-07-30', '2018-11-13');
-INSERT INTO `books_table` VALUES ('6', 'http://127.0.0.1:3001/bookcheng/6.png', '幸福私家菜', '雀鸣', '5730', '5893', '已完结', '第三方购买', '都市', '2017-12-26', '2018-05-07');
-INSERT INTO `books_table` VALUES ('7', 'http://127.0.0.1:3001/bookcheng/7.png', '修仙', '暖风拂面', '3795', '6389', '正在更新', '个人原创', '仙侠', '2017-11-11', '2018-10-08');
-INSERT INTO `books_table` VALUES ('8', 'http://127.0.0.1:3001/bookcheng/8.png', '至尊股神', '伊戈达拉', '4726', '6803', '已完结', '心阅版权', '都市', '2016-09-10', '2017-11-14');
+INSERT INTO `books_table` VALUES ('1', 'http://127.0.0.1:3001/bookcheng/1.png', '武逆', '只是小虾米');
+INSERT INTO `books_table` VALUES ('2', 'http://127.0.0.1:3001/bookcheng/2.png', '013号凶案', '月半墙');
+INSERT INTO `books_table` VALUES ('3', 'http://127.0.0.1:3001/bookcheng/3.png', '风水师的诅咒', '三两二钱');
+INSERT INTO `books_table` VALUES ('4', 'http://127.0.0.1:3001/bookcheng/4.png', '娇软小媳妇', '东方玉如意');
+INSERT INTO `books_table` VALUES ('5', 'http://127.0.0.1:3001/bookcheng/5.png', '闪婚霸爱', '我是木木');
+INSERT INTO `books_table` VALUES ('6', 'http://127.0.0.1:3001/bookcheng/6.png', '幸福私家菜', '雀鸣');
+INSERT INTO `books_table` VALUES ('7', 'http://127.0.0.1:3001/bookcheng/7.png', '修仙', '暖风拂面');
+INSERT INTO `books_table` VALUES ('8', 'http://127.0.0.1:3001/bookcheng/8.png', '至尊股神', '伊戈达拉');
 
 -- ----------------------------
 -- Table structure for boys_carousel_table
@@ -174,12 +167,12 @@ INSERT INTO `boys_carousel_table` VALUES ('3', 'http://127.0.0.1:3001/carousel/b
 -- ----------------------------
 DROP TABLE IF EXISTS `boys_table`;
 CREATE TABLE `boys_table` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `pic_src` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `author` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of boys_table
@@ -192,6 +185,20 @@ INSERT INTO `boys_table` VALUES ('5', 'http://127.0.0.1:3001/bookcheng/boy5.png'
 INSERT INTO `boys_table` VALUES ('6', 'http://127.0.0.1:3001/bookcheng/boy6.png', '医道圣仙', '玉面浮屠');
 INSERT INTO `boys_table` VALUES ('7', 'http://127.0.0.1:3001/bookcheng/boy7.png', '校花的特殊保镖', '酒色');
 INSERT INTO `boys_table` VALUES ('8', 'http://127.0.0.1:3001/bookcheng/boy8.png', '绝品奇门医圣', '苍生有余');
+
+-- ----------------------------
+-- Table structure for carousel_table
+-- ----------------------------
+DROP TABLE IF EXISTS `carousel_table`;
+CREATE TABLE `carousel_table` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `src` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of carousel_table
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for chuban_carousel_table
@@ -366,12 +373,12 @@ INSERT INTO `comic_carousel_table` VALUES ('3', 'http://127.0.0.1:3001/carousel/
 -- ----------------------------
 DROP TABLE IF EXISTS `comic_table`;
 CREATE TABLE `comic_table` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `pic_src` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `author` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of comic_table
@@ -396,16 +403,17 @@ CREATE TABLE `comment1_table` (
   `color` varchar(255) DEFAULT 'A',
   `zanguo` varchar(255) DEFAULT 'false',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of comment1_table
 -- ----------------------------
-INSERT INTO `comment1_table` VALUES ('1', 'http://127.0.0.1:3001/hichat/tx6.png', '浮生若梦', '我连魂魄都是黑的，唯独心尖上一点干干净净的放着你，血还是红的，用它护着你，我愿意。', '38', '', 'false');
-INSERT INTO `comment1_table` VALUES ('2', 'http://127.0.0.1:3001/hichat/tx4.png', '找不到你了', '如果我喜欢的人拿掉我的烟头，我就戒了；如果我喜欢的人睡在我身边，我就不熬夜了；如果我喜欢的为我添衣，那我就不要风度了。喝不到清晨的粥，那就喝夜晚的酒。', '22', '', 'false');
-INSERT INTO `comment1_table` VALUES ('3', 'http://127.0.0.1:3001/hichat/tx1.png', '荣木阳', '我在。', '130', '', 'false');
-INSERT INTO `comment1_table` VALUES ('4', 'http://127.0.0.1:3001/hichat/tx5.png', '陌笙', '我问我男朋友你知道最暖心的话是什么吗？他说“什么最暖心的话？我去给你买奶茶了，坐着等我，别出来，天冷。”', '9', '', 'false');
-INSERT INTO `comment1_table` VALUES ('5', 'http://127.0.0.1:3001/hichat/tx3.png', '薄荷味橘子糖', '我没有很刻意的去想你，因为我知道，遇到了就该感恩，路过了就需要释怀。我只是在很多很多的小瞬间想起你，比如一部电影，一首歌，一条马路和无数个闭上眼睛的瞬间。', '237', '', 'false');
+INSERT INTO `comment1_table` VALUES ('1', 'http://127.0.0.1:3001/hichat/tx6.png', '浮生若梦', '我连魂魄都是黑的，唯独心尖上一点干干净净的放着你，血还是红的，用它护着你，我愿意。', '37', 'green', 'true');
+INSERT INTO `comment1_table` VALUES ('2', 'http://127.0.0.1:3001/hichat/tx4.png', '找不到你了', '如果我喜欢的人拿掉我的烟头，我就戒了；如果我喜欢的人睡在我身边，我就不熬夜了；如果我喜欢的为我添衣，那我就不要风度了。喝不到清晨的粥，那就喝夜晚的酒。', '22', 'green', 'true');
+INSERT INTO `comment1_table` VALUES ('3', 'http://127.0.0.1:3001/hichat/tx1.png', '荣木阳', '我在。', '129', '', 'false');
+INSERT INTO `comment1_table` VALUES ('4', 'http://127.0.0.1:3001/hichat/tx5.png', '陌笙', '“什么最暖心的话？我去给你买奶茶了，坐着等我，别出来，天冷。”', '8', 'green', 'true');
+INSERT INTO `comment1_table` VALUES ('5', 'http://127.0.0.1:3001/hichat/tx3.png', '薄荷味橘子糖', '我没有很刻意的去想你，因为我知道，遇到了就该感恩，路过了就需要释怀。我只是在很多很多的小瞬间想起你，比如一部电影，一首歌，一条马路和无数个闭上眼睛的瞬间。', '235', '', 'false');
+INSERT INTO `comment1_table` VALUES ('10', 'http://127.0.0.1:3001/hichat/tx6.png', '花落雨', 'nihao', '0', '', 'false');
 
 -- ----------------------------
 -- Table structure for comment2_table
@@ -486,7 +494,7 @@ INSERT INTO `girls_table` VALUES ('2', 'http://127.0.0.1:3001/bookcheng/nv2.png'
 INSERT INTO `girls_table` VALUES ('3', 'http://127.0.0.1:3001/bookcheng/nv3.png', '都市之修仙归来', '永恒的世界');
 INSERT INTO `girls_table` VALUES ('4', 'http://127.0.0.1:3001/bookcheng/nv4.png', '肥妞逆袭成网红', '依晗');
 INSERT INTO `girls_table` VALUES ('5', 'http://127.0.0.1:3001/bookcheng/nv5.png', '妻约已过', '琪璇');
-INSERT INTO `girls_table` VALUES ('6', 'http://127.0.0.1:3001/bookcheng/nv6.png', '甜田小厨娘', '刘大锤');
+INSERT INTO `girls_table` VALUES ('6', 'http://127.0.0.1:3001/bookcheng/nv6.png', '甜田厨娘', '刘大锤');
 INSERT INTO `girls_table` VALUES ('7', 'http://127.0.0.1:3001/bookcheng/nv7.png', '我的美女俏总裁', '我吃小苹果');
 INSERT INTO `girls_table` VALUES ('8', 'http://127.0.0.1:3001/bookcheng/nv8.png', '医女狂妃', '雪月夜');
 
@@ -509,6 +517,21 @@ CREATE TABLE `hichat_table` (
 INSERT INTO `hichat_table` VALUES ('1', '讨论：最暖心的一句话', 'http://127.0.0.1:3001/hichat/1.png', '2763', '356');
 INSERT INTO `hichat_table` VALUES ('2', '你身边真的有人睡三四个小时', 'http://127.0.0.1:3001/hichat/2.png', '358', '159');
 INSERT INTO `hichat_table` VALUES ('3', '00后黑话宝典，你知道多少？', 'http://127.0.0.1:3001/hichat/3.png', '1693', '268');
+
+-- ----------------------------
+-- Table structure for hi_chat
+-- ----------------------------
+DROP TABLE IF EXISTS `hi_chat`;
+CREATE TABLE `hi_chat` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `text` text NOT NULL,
+  `pic_src` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of hi_chat
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for opinion_table
@@ -544,6 +567,21 @@ INSERT INTO `original_carousel_table` VALUES ('3', 'http://127.0.0.1:3001/carous
 INSERT INTO `original_carousel_table` VALUES ('4', 'http://127.0.0.1:3001/carousel/yc4.png');
 
 -- ----------------------------
+-- Table structure for original_recommendation_table
+-- ----------------------------
+DROP TABLE IF EXISTS `original_recommendation_table`;
+CREATE TABLE `original_recommendation_table` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `pic_src` varchar(255) NOT NULL,
+  `book_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of original_recommendation_table
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for original_recommend_table
 -- ----------------------------
 DROP TABLE IF EXISTS `original_recommend_table`;
@@ -561,6 +599,20 @@ INSERT INTO `original_recommend_table` VALUES ('1', 'http://127.0.0.1:3001/yctj/
 INSERT INTO `original_recommend_table` VALUES ('2', 'http://127.0.0.1:3001/yctj/2.png', '校花的特殊保镖');
 INSERT INTO `original_recommend_table` VALUES ('3', 'http://127.0.0.1:3001/yctj/3.png', '修仙归来');
 INSERT INTO `original_recommend_table` VALUES ('4', 'http://127.0.0.1:3001/yctj/4.png', '甜田小厨娘');
+
+-- ----------------------------
+-- Table structure for originate_carousel_table
+-- ----------------------------
+DROP TABLE IF EXISTS `originate_carousel_table`;
+CREATE TABLE `originate_carousel_table` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `src` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of originate_carousel_table
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for registerpassword_table
@@ -667,41 +719,44 @@ CREATE TABLE `user_table` (
   `ID` int(30) NOT NULL AUTO_INCREMENT,
   `tel` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
+  `vip` varchar(255) DEFAULT NULL,
+  `state` varchar(255) NOT NULL,
+  `gender` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_table
 -- ----------------------------
-INSERT INTO `user_table` VALUES ('7', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('8', '17733972992', '123456');
-INSERT INTO `user_table` VALUES ('9', '17733972993', '123456');
-INSERT INTO `user_table` VALUES ('10', '17733972994', '123456');
-INSERT INTO `user_table` VALUES ('11', '17733972995', '123456');
-INSERT INTO `user_table` VALUES ('12', '17733972996', '123456');
-INSERT INTO `user_table` VALUES ('13', '17733972999', '123456');
-INSERT INTO `user_table` VALUES ('14', '17733972998', '123456');
-INSERT INTO `user_table` VALUES ('15', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('16', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('17', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('18', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('19', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('20', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('21', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('22', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('23', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('24', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('25', '17733972991', '123456');
-INSERT INTO `user_table` VALUES ('26', '11111111111', '123456');
-INSERT INTO `user_table` VALUES ('27', '17733972911', '123456');
-INSERT INTO `user_table` VALUES ('28', '17733958441', '123456');
-INSERT INTO `user_table` VALUES ('29', '17756641254', '123456');
-INSERT INTO `user_table` VALUES ('30', '12254874551', '123456');
-INSERT INTO `user_table` VALUES ('31', '12548845124', '123456');
-INSERT INTO `user_table` VALUES ('32', '15588451223', '123456');
-INSERT INTO `user_table` VALUES ('33', '18332232939', '19980304');
-INSERT INTO `user_table` VALUES ('35', '17733972988', '645c9d6e956246fd1d9f217ef7c55f95');
-INSERT INTO `user_table` VALUES ('36', '13231832728', '3bbdd80560e98fcf26df90171354ebef');
+INSERT INTO `user_table` VALUES ('7', '17733972991', '123456', '是', '已停用', '男');
+INSERT INTO `user_table` VALUES ('8', '17733972992', '123456', '否', '已启用', '女');
+INSERT INTO `user_table` VALUES ('9', '17733972993', '123456', '是', '已停用', '男');
+INSERT INTO `user_table` VALUES ('10', '17733972994', '123456', '是', '已停用', '男');
+INSERT INTO `user_table` VALUES ('11', '17733972995', '123456', '否', '已启用', '女');
+INSERT INTO `user_table` VALUES ('12', '17733972996', '123456', '是', '已启用', '女');
+INSERT INTO `user_table` VALUES ('13', '17733972999', '123456', '否', '已停用', '男');
+INSERT INTO `user_table` VALUES ('14', '17733972998', '123456', '是', '已启用', '女');
+INSERT INTO `user_table` VALUES ('15', '17733972991', '123456', '否', '已停用', '男');
+INSERT INTO `user_table` VALUES ('16', '17733972991', '123456', '是', '已停用', '男');
+INSERT INTO `user_table` VALUES ('17', '17733972991', '123456', '否', '已启用', '女');
+INSERT INTO `user_table` VALUES ('18', '17733972991', '123456', '是', '已停用', '女');
+INSERT INTO `user_table` VALUES ('19', '17733972991', '123456', '否', '已停用', '男');
+INSERT INTO `user_table` VALUES ('20', '17733972991', '123456', '否', '已启用', '女');
+INSERT INTO `user_table` VALUES ('21', '17733972991', '123456', '是', '已停用', '女');
+INSERT INTO `user_table` VALUES ('22', '17733972991', '123456', '否', '已停用', '女');
+INSERT INTO `user_table` VALUES ('23', '17733972991', '123456', '是', '已启用', '男');
+INSERT INTO `user_table` VALUES ('24', '17733972991', '123456', '否', '已停用', '女');
+INSERT INTO `user_table` VALUES ('25', '17733972991', '123456', '否', '已停用', '男');
+INSERT INTO `user_table` VALUES ('26', '11111111111', '123456', '否', '已停用', '女');
+INSERT INTO `user_table` VALUES ('27', '17733972911', '123456', '是', '已启用', '男');
+INSERT INTO `user_table` VALUES ('28', '17733958441', '123456', '否', '已停用', '女');
+INSERT INTO `user_table` VALUES ('29', '17756641254', '123456', '是', '已停用', '男');
+INSERT INTO `user_table` VALUES ('30', '12254874551', '123456', '否', '已停用', '女');
+INSERT INTO `user_table` VALUES ('31', '12548845124', '123456', '是', '已启用', '女');
+INSERT INTO `user_table` VALUES ('32', '15588451223', '123456', '否', '已停用', '女');
+INSERT INTO `user_table` VALUES ('33', '18332232939', '19980304', '是', '已停用', '女');
+INSERT INTO `user_table` VALUES ('34', '13231832728', '123456', '是', '已停用', '女');
+INSERT INTO `user_table` VALUES ('35', '17733972988', '645c9d6e956246fd1d9f217ef7c55f95', '否', '已启用', '女');
 
 -- ----------------------------
 -- Table structure for wanjie_carousel_table
